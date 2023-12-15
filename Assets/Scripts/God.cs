@@ -44,9 +44,9 @@ public class God : MonoBehaviour
         getUpdate=true;
         UpdateValues();
         Debug.Log("Running Updates");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         getUpdate=false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
     }
 
