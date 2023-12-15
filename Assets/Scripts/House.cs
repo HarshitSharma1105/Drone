@@ -27,14 +27,17 @@ public class House : MonoBehaviour
     {
         time += Time.deltaTime;
         if(time > 5){
-            RealTimeUpdate();
+            UpdateValues();
             time = 0;
         }
     }
-    private void RealTimeUpdate()
-    {   //Own House
+    private void UpdateValues()
+    {
+        PreUpdateReset();        
+           //Own House
         houseValue.y = houseValue.x * God.houseWeightage;
-        happinessIndex = houseValue.y;
+        happinessIndex += houseValue.y;
+        //Debug.Log(happinessIndex);
 
 
 
@@ -44,10 +47,13 @@ public class House : MonoBehaviour
         foreach (Collider c in neighbourhood){
             if(c.gameObject.tag == "House"){
                 neighbourhoodValue.x += c.gameObject.GetComponent<House>().houseValue.x;
+                neighbourhoodCount++;
             }
         }
-        neighbourhoodValue.y = neighbourhoodValue.x / neighbourhoodCount * God.neighbourhoodWeightage;
+        if(neighbourhoodCount!=0)
+            neighbourhoodValue.y = neighbourhoodValue.x / neighbourhoodCount * God.neighbourhoodWeightage;
         happinessIndex += neighbourhoodValue.y;
+        //Debug.Log("neighbourhoodValue" + neighbourhoodValue.y);
 
 
 
@@ -60,6 +66,7 @@ public class House : MonoBehaviour
             }
         }
         happinessIndex += roadValue;
+        //Debug.Log("roadValue" + roadValue);
 
         //Hospital
         GameObject[] hospitals = GameObject.FindGameObjectsWithTag("Hospital");
@@ -67,6 +74,7 @@ public class House : MonoBehaviour
             float distance = Vector3.Distance(transform.position, hospital.transform.position);
             hospitalValue += hospitalDistanceScaling / distance * God.hospitalWeightage;        //the scaling function has to be changed to a more realistic one
         }
+        //Debug.Log("hospitalValue" + hospitalValue);
         happinessIndex += hospitalValue;
 
         //School
@@ -75,5 +83,21 @@ public class House : MonoBehaviour
             float distance = Vector3.Distance(transform.position, school.transform.position);
             schoolValue += schoolDistanceScaling / distance * God.schoolWeightage;        //the scaling function has to be changed to a more realistic one
         }
+        //Debug.Log("schoolValue" + schoolValue);
+        happinessIndex += schoolValue;
+        Debug.Log("happinessIndex: " + happinessIndex);
+
+
+    }
+
+
+    private void PreUpdateReset(){
+        houseValue.y = 0;
+        neighbourhoodValue.x = 0;
+        neighbourhoodValue.y = 0;
+        roadValue = 0;
+        hospitalValue = 0;
+        schoolValue = 0;
+        happinessIndex = 0;
     }
 }

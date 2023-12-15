@@ -36,7 +36,7 @@ public class God : MonoBehaviour
 
     private void RealTimeUpdate(){
 
-
+        cumulativeHappinessIndex=0;
         GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
 
 
