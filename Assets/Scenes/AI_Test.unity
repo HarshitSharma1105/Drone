@@ -135,8 +135,9 @@ GameObject:
   - component: {fileID: 681092596}
   - component: {fileID: 681092595}
   - component: {fileID: 681092594}
+  - component: {fileID: 681092598}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: School
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,6 +229,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &681092598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681092593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c393166320a6e4aaf7ae37efda4f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  schoolCapacity: 20
 --- !u!1 &1032063280
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +833,7 @@ Transform:
   m_GameObject: {fileID: 1536160885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29, y: 0.5, z: 43.383354}
+  m_LocalPosition: {x: 29.5, y: 0.5, z: 43.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

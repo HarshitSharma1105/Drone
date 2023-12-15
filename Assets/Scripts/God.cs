@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class God : MonoBehaviour
 {
+    public static bool getUpdate;
     public static float cumulativeHappinessIndex=0;
     public static float houseWeightage=0.3f;
     public static float roadWeightage=0.1f;
@@ -20,6 +22,7 @@ public class God : MonoBehaviour
     private float time=0;
     void Start()
     {
+        getUpdate=true;
         gameObject.tag="God";
         Debug.Log("God is here");
     }
@@ -27,14 +30,27 @@ public class God : MonoBehaviour
     
     void Update()
     {
+        if(God.getUpdate){
+            UpdateValues();
+        }
         time += Time.deltaTime;
         if(time > 5){
-            RealTimeUpdate();
+            StartCoroutine(GetUpdates());
             time = 0;
         }
     }
 
-    private void RealTimeUpdate(){
+    IEnumerator GetUpdates(){
+        getUpdate=true;
+        UpdateValues();
+        Debug.Log("Running Updates");
+        yield return new WaitForSeconds(2f);
+        getUpdate=false;
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
+    }
+
+    private void UpdateValues(){
 
         cumulativeHappinessIndex=0;
         GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
@@ -76,6 +92,6 @@ public class God : MonoBehaviour
             cumulativeHappinessIndex-=schoolPenalty;
         }
 
-        Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
+        //Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
     }
 }

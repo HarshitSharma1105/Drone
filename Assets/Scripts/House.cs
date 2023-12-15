@@ -18,17 +18,15 @@ public class House : MonoBehaviour
 
 
     
-    float time=0;
     void Start(){
+        God.getUpdate=true;
         gameObject.tag="House";
         houseMembers=2;
     }
     void Update()
     {
-        time += Time.deltaTime;
-        if(time > 5){
+        if(God.getUpdate){
             UpdateValues();
-            time = 0;
         }
     }
     private void UpdateValues()
@@ -85,9 +83,9 @@ public class House : MonoBehaviour
         }
         //Debug.Log("schoolValue" + schoolValue);
         happinessIndex += schoolValue;
-        Debug.Log("happinessIndex: " + happinessIndex);
+        //Debug.Log("happinessIndex: " + happinessIndex);
 
-
+        God.cumulativeHappinessIndex += happinessIndex;
     }
 
 
