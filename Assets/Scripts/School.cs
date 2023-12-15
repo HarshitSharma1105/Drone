@@ -12,11 +12,11 @@ public class School : MonoBehaviour
 
     void Update()
     {
-        /*time += Time.deltaTime;
+        time += Time.deltaTime;
         if(time > 5){
-            RealTimeUpdate();
+         //   RealTimeUpdate();
             time = 0;
         }
-        */
+        
     }
 }
