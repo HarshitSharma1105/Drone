@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
+
+    [HideInInspector] public bool isUpdating=false;
     public float happinessIndex;
     
     public int houseMembers;
@@ -16,16 +18,19 @@ public class House : MonoBehaviour
     private float schoolValue;
     public float schoolDistanceScaling=0.1f; //scaling factor for school distance has to be changed to a more realistic one
 
+    public float waterValue;
+    [HideInInspector] public int membersWithoutWater;
+    public bool hasWater=false;
+
 
     
     void Start(){
-        God.getUpdate=true;
+        isUpdating=true;
         gameObject.tag="House";
-        houseMembers=2;
     }
     void Update()
     {
-        if(God.getUpdate){
+        if(isUpdating){
             UpdateValues();
         }
     }
@@ -57,14 +62,13 @@ public class House : MonoBehaviour
 
 
         //Road
-        Collider[] road = Physics.OverlapSphere(transform.position, 1.5f*houseRadius);
+        Collider[] road = Physics.OverlapSphere(transform.position, houseRadius/(2*Mathf.Sqrt(2))+0.5f);
         foreach (Collider c in road){
             if(c.gameObject.tag == "Road"){
                 roadValue += c.gameObject.GetComponent<Road>().roadLevel * God.roadWeightage;
             }
         }
         happinessIndex += roadValue;
-        //Debug.Log("roadValue" + roadValue);
 
         //Hospital
         GameObject[] hospitals = GameObject.FindGameObjectsWithTag("Hospital");
@@ -85,7 +89,14 @@ public class House : MonoBehaviour
         happinessIndex += schoolValue;
         //Debug.Log("happinessIndex: " + happinessIndex);
 
-        God.cumulativeHappinessIndex += happinessIndex;
+        //water
+        if(!hasWater){
+            Debug.Log("Scarcity at: "+gameObject.name + " with " + houseMembers);
+        }
+        
+        
+
+        isUpdating=false;
     }
 
 
@@ -97,5 +108,7 @@ public class House : MonoBehaviour
         hospitalValue = 0;
         schoolValue = 0;
         happinessIndex = 0;
+        waterValue = 0;
+        membersWithoutWater = houseMembers;
     }
 }

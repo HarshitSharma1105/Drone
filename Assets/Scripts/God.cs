@@ -3,26 +3,33 @@ using UnityEngine;
 
 public class God : MonoBehaviour
 {
-    public static bool getUpdate;
+    public static bool getUpdate=false;
     public static float cumulativeHappinessIndex=0;
     public static float houseWeightage=0.3f;
     public static float roadWeightage=0.1f;
     public static float neighbourhoodWeightage=0.1f;
-    public static float schoolWeightage=0.1f;
+    
+
+
     public static float hospitalWeightage=0.1f;
     public static float hospitalPenalty=0.1f;
-
-
-
     private int hospitalCapacity;
     private int hospitalPatients;
 
+
+    public static float schoolWeightage=0.1f;
     private int schoolCapacity;
     private int schoolStudents;
+    public static float schoolPenalty=0.1f;
+
+
+    public static float waterWeightage=0.1f;
+    public static float waterPenalty=0.1f;
     private float time=0;
     void Start()
     {
-        getUpdate=true;
+        StartCoroutine(GetUpdates());
+        getUpdate=false;
         gameObject.tag="God";
         Debug.Log("God is here");
     }
@@ -30,8 +37,10 @@ public class God : MonoBehaviour
     
     void Update()
     {
-        if(God.getUpdate){
-            UpdateValues();
+        if(getUpdate)
+        {
+            StartCoroutine(GetUpdates());
+            getUpdate = false;
         }
         time += Time.deltaTime;
         if(time > 5){
@@ -41,12 +50,23 @@ public class God : MonoBehaviour
     }
 
     IEnumerator GetUpdates(){
-        getUpdate=true;
         UpdateValues();
         Debug.Log("Running Updates");
-        yield return new WaitForSeconds(1f);
+        GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
+        foreach(GameObject house in houses){
+            house.GetComponent<House>().isUpdating=true;
+            //Debug.Log("Updating House: "+house.name);
+        }
+        yield return new WaitForSeconds(0.5f);
+        GameObject[] waterTanks = GameObject.FindGameObjectsWithTag("WaterTank");
+        foreach(GameObject waterTank in waterTanks){
+            waterTank.GetComponent<WaterTank>().isUpdating=true;
+            //Debug.Log("Updating WaterTank: "+waterTank.name);
+        }
+        
+        yield return new WaitForSeconds(0.5f);
         getUpdate=false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
     }
 
@@ -63,15 +83,14 @@ public class God : MonoBehaviour
         foreach(GameObject hospital in hospitals){
             hospitalCapacity += hospital.GetComponent<Hospital>().capacity;
         }
+
         hospitalPatients=0;
-        
         foreach(GameObject house in houses){
             hospitalPatients += house.GetComponent<House>().houseMembers;
         }
         if(hospitalPatients > hospitalCapacity){
             Debug.Log("Hospital Capacity Exceeded");
-            float hospitalPenalty = (hospitalPatients - hospitalCapacity) * 0.1f;
-            cumulativeHappinessIndex-=hospitalPenalty;
+            cumulativeHappinessIndex-=(hospitalPatients - hospitalCapacity) * hospitalPenalty;
         }
 
 
@@ -88,10 +107,7 @@ public class God : MonoBehaviour
         }
         if(schoolStudents > schoolCapacity){
             Debug.Log("School Capacity Exceeded");
-            float schoolPenalty = (schoolStudents - schoolCapacity) * 0.1f;
-            cumulativeHappinessIndex-=schoolPenalty;
+            cumulativeHappinessIndex -= (schoolStudents - schoolCapacity) * schoolPenalty;
         }
-
-        //Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
     }
 }

@@ -8,6 +8,9 @@ TagManager:
   - School
   - House
   - God
+  - Road
+  - WaterTank
+  - Ground
   layers:
   - Default
   - TransparentFX

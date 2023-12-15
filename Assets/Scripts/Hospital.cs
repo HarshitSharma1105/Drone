@@ -13,9 +13,8 @@ public class Hospital : MonoBehaviour
 
     void Update()
     {
-        if(God.getUpdate){
+
             //UpdateValues();
-        }
-        
     }
+        
 }
