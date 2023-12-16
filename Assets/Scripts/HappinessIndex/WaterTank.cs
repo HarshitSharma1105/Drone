@@ -30,9 +30,9 @@ public class WaterTank : MonoBehaviour
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "House")
                 continue;
-        
+            
             House housee=house.gameObject.GetComponent<House>();
-
+            housee.waterValue=0;
             if(housee.membersWithoutWater<=capacity){
                 capacityLeft-=housee.membersWithoutWater;
                 housee.waterValue+=housee.membersWithoutWater*God.waterWeightage;

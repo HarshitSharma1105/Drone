@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - ElectricalPower
+  - School
+  - Ground
+  - House
+  - Hospital
+  - Road
+  - WaterTank
+  - God
+  - Market
   layers:
   - Default
   - TransparentFX
