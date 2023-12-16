@@ -22,6 +22,8 @@ public class God : MonoBehaviour
     private int schoolStudents;
     public static float schoolPenalty=0.1f;
 
+    public static float marketWeightage=0.1f;
+
 
     public static float waterWeightage=0.1f;
 
@@ -115,6 +117,13 @@ public class God : MonoBehaviour
         if(schoolStudents > schoolCapacity){
             Debug.Log("School Capacity Exceeded");
             cumulativeHappinessIndex -= (schoolStudents - schoolCapacity) * schoolPenalty;
+        }
+
+
+        //MarketCheck
+        GameObject[] markets = GameObject.FindGameObjectsWithTag("Market");
+        if(markets.Length == 0){
+            Debug.Log("No Market");
         }
     }
 }

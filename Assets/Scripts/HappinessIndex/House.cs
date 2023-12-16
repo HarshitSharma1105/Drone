@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class House : MonoBehaviour
@@ -25,6 +26,9 @@ public class House : MonoBehaviour
     public float powerValue;
     [HideInInspector] public int membersWithoutPower;
     public bool hasPower=false;
+
+    private float marketValue;
+    public float marketDistanceScaling=0.1f; //scaling factor for market distance has to be changed to a more realistic one
 
 
     
@@ -97,17 +101,29 @@ public class House : MonoBehaviour
         if(!hasWater){
             Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
         }
+        happinessIndex += waterValue;
 
         //power
         if(!hasPower){
             Debug.Log("No Power at: "+gameObject.name + " with " + membersWithoutPower);
         }
+        happinessIndex += powerValue;
+
+        //market
+        GameObject[] markets = GameObject.FindGameObjectsWithTag("Market");
+        foreach (GameObject market in markets){
+            float distance = Vector3.Distance(transform.position, market.transform.position);
+            marketValue += marketDistanceScaling * Calc(distance) * God.marketWeightage;        //the scaling function has to be changed to a more realistic one
+        }
+        happinessIndex += marketValue;
 
         God.cumulativeHappinessIndex += happinessIndex;
 
-        
-
         isUpdating=false;
+    }
+
+    private float Calc(float x){
+        return -Mathf.Exp(-0.6f*(x-4)) + 2*Mathf.Exp(-0.4f*(x-4));
     }
 
 
@@ -119,9 +135,7 @@ public class House : MonoBehaviour
         hospitalValue = 0;
         schoolValue = 0;
         happinessIndex = 0;
-        waterValue = 0;
         membersWithoutWater = houseMembers;
-        powerValue = 0;
         membersWithoutPower = houseMembers;
     }
 }
