@@ -9,6 +9,7 @@ TagManager:
   - Educational
   - Religious
   - Houses
+  - Terrain
   layers:
   - Default
   - TransparentFX
