@@ -1181,12 +1181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626de46a251abbc4ba9150ed978858a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToInstantiate: {fileID: 6927044892065344540, guid: 0348bdfcef078444ca85cd95535b49cc,
+  prefabToInstantiate: {fileID: 6458922051831916399, guid: 527f64c3ac740a44bbf69fd33d221503,
     type: 3}
   areaWidth: 1
   panel: {fileID: 423902107}
   disallowedObjects:
-  - {fileID: 6927044892065344540, guid: 0348bdfcef078444ca85cd95535b49cc, type: 3}
+  - {fileID: 6458922051831916399, guid: 527f64c3ac740a44bbf69fd33d221503, type: 3}
 --- !u!114 &2043676942
 MonoBehaviour:
   m_ObjectHideFlags: 0
