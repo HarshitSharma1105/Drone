@@ -13,7 +13,6 @@ public class Hospital : MonoBehaviour
 
     void Update()
     {
-
             //UpdateValues();
     }
         

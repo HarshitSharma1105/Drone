@@ -84,7 +84,10 @@ public class God : MonoBehaviour
         cumulativeHappinessIndex=0;
         GameObject[] houses = GameObject.FindGameObjectsWithTag("Houses");
 
-
+        foreach(GameObject house in houses){
+            hospitalPatients += house.GetComponent<House>().houseMembers;
+            schoolStudents += house.GetComponent<House>().houseMembers;
+        }
 
         //HospitalCapacityCheck
         hospitalCapacity=0;
@@ -92,11 +95,7 @@ public class God : MonoBehaviour
         foreach(GameObject hospital in hospitals){
             hospitalCapacity += hospital.GetComponent<Hospital>().capacity;
         }
-
         hospitalPatients=0;
-        foreach(GameObject house in houses){
-            hospitalPatients += house.GetComponent<House>().houseMembers;
-        }
         if(hospitalPatients > hospitalCapacity){
             Debug.Log("Hospital Capacity Exceeded");
             cumulativeHappinessIndex-=(hospitalPatients - hospitalCapacity) * hospitalPenalty;
@@ -111,9 +110,6 @@ public class God : MonoBehaviour
             schoolCapacity += school.GetComponent<School>().schoolCapacity;
         }
         schoolStudents=0;
-        foreach(GameObject house in houses){
-            schoolStudents += house.GetComponent<House>().houseMembers;
-        }
         if(schoolStudents > schoolCapacity){
             Debug.Log("School Capacity Exceeded");
             cumulativeHappinessIndex -= (schoolStudents - schoolCapacity) * schoolPenalty;

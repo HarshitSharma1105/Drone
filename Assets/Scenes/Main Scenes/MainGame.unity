@@ -643,10 +643,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: OnlyResWithTexture_0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2dc7ac47970e5324b912283890819048,
+        type: 3}
+      propertyPath: m_TagString
+      value: Houses
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2dc7ac47970e5324b912283890819048,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1284726700}
   m_SourcePrefab: {fileID: 100100000, guid: 2dc7ac47970e5324b912283890819048, type: 3}
 --- !u!4 &1284726698 stripped
 Transform:
@@ -654,6 +663,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1284726697}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1284726699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2dc7ac47970e5324b912283890819048,
+    type: 3}
+  m_PrefabInstance: {fileID: 1284726697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1284726700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284726699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98773063c305146959cce508beb6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUpdating: 0
+  happinessIndex: 0
+  houseMembers: 4
+  houseRadius: 2
+  houseValue: {x: 0, y: 0}
+  hospitalDistanceScaling: 0.1
+  schoolDistanceScaling: 0.1
+  waterValue: 0
+  membersWithoutWater: 0
+  hasWater: 0
+  powerValue: 0
+  membersWithoutPower: 0
+  hasPower: 0
+  marketDistanceScaling: 0.1
 --- !u!1 &1556017718
 GameObject:
   m_ObjectHideFlags: 0

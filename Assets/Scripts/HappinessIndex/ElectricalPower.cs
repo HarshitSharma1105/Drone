@@ -13,7 +13,6 @@ public class ElectricalPower : MonoBehaviour
         gameObject.tag="ElectricalPower";
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(isUpdating){
