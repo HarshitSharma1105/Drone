@@ -7,4 +7,7 @@ public class Road : MonoBehaviour
         God.getUpdate=true;
         gameObject.tag="Road";
     }
+    void Update(){
+        //UpdateValues();   
+    }
 }

@@ -23,14 +23,16 @@ public class WaterTank : MonoBehaviour
         capacityLeft=capacity;
         GameObject[] houses=GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
+            if(house.GetComponent<House>()!=null)
             house.GetComponent<House>().hasWater=false;
         }
-        Collider[] housesInRange=Physics.OverlapSphere(transform.position, waterRadius);
+        Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), waterRadius);
 
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")
                 continue;
-            
+            if(house.gameObject.GetComponent<House>()==null)
+                continue;
             House housee=house.gameObject.GetComponent<House>();
             housee.waterValue=0;
             if(housee.membersWithoutWater<=capacity){
@@ -48,5 +50,5 @@ public class WaterTank : MonoBehaviour
             }
         }
         isUpdating=false;
-}
+    }
 }

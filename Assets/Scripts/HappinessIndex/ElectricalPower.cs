@@ -13,7 +13,6 @@ public class ElectricalPower : MonoBehaviour
         gameObject.tag="ElectricalPower";
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(isUpdating){
@@ -24,16 +23,19 @@ public class ElectricalPower : MonoBehaviour
         capacityLeft=capacity;
         GameObject[] houses=GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
+            if(house.GetComponent<House>()!=null)
             house.GetComponent<House>().hasPower=false;
         }
-        Collider[] housesInRange=Physics.OverlapSphere(transform.position, powerRadius);
+        Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), powerRadius);
 
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")
                 continue;
-        
-            House housee=house.gameObject.GetComponent<House>();
+            if(house.GetComponent<House>()==null)
+            continue;
 
+            House housee=house.gameObject.GetComponent<House>();
+            housee.powerValue=0;
             if(housee.membersWithoutPower<=capacity){
                 capacityLeft-=housee.membersWithoutPower;
                 housee.powerValue+=housee.membersWithoutPower*God.powerWeightage;

@@ -7,16 +7,16 @@ public class House : MonoBehaviour
     [HideInInspector] public bool isUpdating=false;
     public float happinessIndex;
     
-    public int houseMembers;
+    public int houseMembers=4;
     public float houseRadius=2f;
-    public Vector2 houseValue;
-    private float roadValue;
-    private Vector2 neighbourhoodValue;
+    public Vector2 houseValue=new Vector2(1,0);
+    [SerializeField] private float roadValue;
+    [SerializeField] private Vector2 neighbourhoodValue;
 
-    private float hospitalValue;
+    [SerializeField] private float hospitalValue;
     public float hospitalDistanceScaling=0.1f; //scaling factor for hospital distance has to be changed to a more realistic one
 
-    private float schoolValue;
+    [SerializeField] private float schoolValue;
     public float schoolDistanceScaling=0.1f; //scaling factor for school distance has to be changed to a more realistic one
 
     public float waterValue;
@@ -27,7 +27,7 @@ public class House : MonoBehaviour
     [HideInInspector] public int membersWithoutPower;
     public bool hasPower=false;
 
-    private float marketValue;
+    [SerializeField] private float marketValue;
     public float marketDistanceScaling=0.1f; //scaling factor for market distance has to be changed to a more realistic one
 
 
@@ -53,12 +53,14 @@ public class House : MonoBehaviour
 
 
         //neighbourhood
-        Collider[] neighbourhood = Physics.OverlapSphere(transform.position, 2.5f*houseRadius);
+        Collider[] neighbourhood = Physics.OverlapSphere(God.GetCentre(gameObject), 2.5f*houseRadius);
         int neighbourhoodCount = 0;
         foreach (Collider c in neighbourhood){
             if(c.gameObject.tag == "Houses"){
+                if(c.gameObject.GetComponent<House>()!=null){
                 neighbourhoodValue.x += c.gameObject.GetComponent<House>().houseValue.x;
                 neighbourhoodCount++;
+                }
             }
         }
         if(neighbourhoodCount!=0)
@@ -70,7 +72,7 @@ public class House : MonoBehaviour
 
 
         //Road
-        Collider[] road = Physics.OverlapSphere(transform.position, houseRadius/(2*Mathf.Sqrt(2))+0.5f);
+        Collider[] road = Physics.OverlapSphere(God.GetCentre(gameObject), houseRadius/(2f*Mathf.Sqrt(2))+0.5f);
         foreach (Collider c in road){
             if(c.gameObject.tag == "Road"){
                 roadValue += c.gameObject.GetComponent<Road>().roadLevel * God.roadWeightage;
@@ -81,8 +83,8 @@ public class House : MonoBehaviour
         //Hospital
         GameObject[] hospitals = GameObject.FindGameObjectsWithTag("Hospital");
         foreach (GameObject hospital in hospitals){
-            float distance = Vector3.Distance(transform.position, hospital.transform.position);
-            hospitalValue += hospitalDistanceScaling / distance * God.hospitalWeightage;        //the scaling function has to be changed to a more realistic one
+            float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(hospital));
+            hospitalValue += hospitalDistanceScaling /(1+ distance) * God.hospitalWeightage;        //the scaling function has to be changed to a more realistic one
         }
         //Debug.Log("hospitalValue" + hospitalValue);
         happinessIndex += hospitalValue;
@@ -90,8 +92,8 @@ public class House : MonoBehaviour
         //School
         GameObject[] schools = GameObject.FindGameObjectsWithTag("School");
         foreach (GameObject school in schools){
-            float distance = Vector3.Distance(transform.position, school.transform.position);
-            schoolValue += schoolDistanceScaling / distance * God.schoolWeightage;        //the scaling function has to be changed to a more realistic one
+            float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(school));
+            schoolValue += schoolDistanceScaling /(1+ distance) * God.schoolWeightage;        //the scaling function has to be changed to a more realistic one
         }
         //Debug.Log("schoolValue" + schoolValue);
         happinessIndex += schoolValue;
@@ -112,7 +114,8 @@ public class House : MonoBehaviour
         //market
         GameObject[] markets = GameObject.FindGameObjectsWithTag("Market");
         foreach (GameObject market in markets){
-            float distance = Vector3.Distance(transform.position, market.transform.position);
+            float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(market));
+            if(distance < 20f)
             marketValue += marketDistanceScaling * Calc(distance) * God.marketWeightage;        //the scaling function has to be changed to a more realistic one
         }
         happinessIndex += marketValue;
@@ -135,6 +138,7 @@ public class House : MonoBehaviour
         hospitalValue = 0;
         schoolValue = 0;
         happinessIndex = 0;
+        marketValue = 0;
         membersWithoutWater = houseMembers;
         membersWithoutPower = houseMembers;
     }
