@@ -10,13 +10,13 @@ public class House : MonoBehaviour
     public int houseMembers;
     public float houseRadius=2f;
     public Vector2 houseValue;
-    private float roadValue;
-    private Vector2 neighbourhoodValue;
+    [SerializeField] private float roadValue;
+    [SerializeField] private Vector2 neighbourhoodValue;
 
-    private float hospitalValue;
+    [SerializeField] private float hospitalValue;
     public float hospitalDistanceScaling=0.1f; //scaling factor for hospital distance has to be changed to a more realistic one
 
-    private float schoolValue;
+    [SerializeField] private float schoolValue;
     public float schoolDistanceScaling=0.1f; //scaling factor for school distance has to be changed to a more realistic one
 
     public float waterValue;
@@ -27,7 +27,7 @@ public class House : MonoBehaviour
     [HideInInspector] public int membersWithoutPower;
     public bool hasPower=false;
 
-    private float marketValue;
+    [SerializeField] private float marketValue;
     public float marketDistanceScaling=0.1f; //scaling factor for market distance has to be changed to a more realistic one
 
 
@@ -57,8 +57,10 @@ public class House : MonoBehaviour
         int neighbourhoodCount = 0;
         foreach (Collider c in neighbourhood){
             if(c.gameObject.tag == "Houses"){
+                if(c.gameObject.GetComponent<House>()!=null){
                 neighbourhoodValue.x += c.gameObject.GetComponent<House>().houseValue.x;
                 neighbourhoodCount++;
+                }
             }
         }
         if(neighbourhoodCount!=0)
@@ -135,6 +137,7 @@ public class House : MonoBehaviour
         hospitalValue = 0;
         schoolValue = 0;
         happinessIndex = 0;
+        marketValue = 0;
         membersWithoutWater = houseMembers;
         membersWithoutPower = houseMembers;
     }
