@@ -53,7 +53,7 @@ public class House : MonoBehaviour
 
 
         //neighbourhood
-        Collider[] neighbourhood = Physics.OverlapSphere(transform.position, 2.5f*houseRadius);
+        Collider[] neighbourhood = Physics.OverlapSphere(God.GetCentre(gameObject), 2.5f*houseRadius);
         int neighbourhoodCount = 0;
         foreach (Collider c in neighbourhood){
             if(c.gameObject.tag == "Houses"){
@@ -70,7 +70,7 @@ public class House : MonoBehaviour
 
 
         //Road
-        Collider[] road = Physics.OverlapSphere(transform.position, houseRadius/(2*Mathf.Sqrt(2))+0.5f);
+        Collider[] road = Physics.OverlapSphere(God.GetCentre(gameObject), houseRadius/(2f*Mathf.Sqrt(2))+0.5f);
         foreach (Collider c in road){
             if(c.gameObject.tag == "Road"){
                 roadValue += c.gameObject.GetComponent<Road>().roadLevel * God.roadWeightage;
@@ -81,8 +81,8 @@ public class House : MonoBehaviour
         //Hospital
         GameObject[] hospitals = GameObject.FindGameObjectsWithTag("Hospital");
         foreach (GameObject hospital in hospitals){
-            float distance = Vector3.Distance(transform.position, hospital.transform.position);
-            hospitalValue += hospitalDistanceScaling / distance * God.hospitalWeightage;        //the scaling function has to be changed to a more realistic one
+            float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(hospital));
+            hospitalValue += hospitalDistanceScaling /(1+ distance) * God.hospitalWeightage;        //the scaling function has to be changed to a more realistic one
         }
         //Debug.Log("hospitalValue" + hospitalValue);
         happinessIndex += hospitalValue;
@@ -90,8 +90,8 @@ public class House : MonoBehaviour
         //School
         GameObject[] schools = GameObject.FindGameObjectsWithTag("School");
         foreach (GameObject school in schools){
-            float distance = Vector3.Distance(transform.position, school.transform.position);
-            schoolValue += schoolDistanceScaling / distance * God.schoolWeightage;        //the scaling function has to be changed to a more realistic one
+            float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(school));
+            schoolValue += schoolDistanceScaling /(1+ distance) * God.schoolWeightage;        //the scaling function has to be changed to a more realistic one
         }
         //Debug.Log("schoolValue" + schoolValue);
         happinessIndex += schoolValue;
@@ -112,7 +112,7 @@ public class House : MonoBehaviour
         //market
         GameObject[] markets = GameObject.FindGameObjectsWithTag("Market");
         foreach (GameObject market in markets){
-            float distance = Vector3.Distance(transform.position, market.transform.position);
+            float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(market));
             marketValue += marketDistanceScaling * Calc(distance) * God.marketWeightage;        //the scaling function has to be changed to a more realistic one
         }
         happinessIndex += marketValue;
