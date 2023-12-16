@@ -57,6 +57,7 @@ public class God : MonoBehaviour
         Debug.Log("Running Updates");
         GameObject[] houses = GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
+            if(house.GetComponent<House>()!=null)
             house.GetComponent<House>().isUpdating=true;
             //Debug.Log("Updating House: "+house.name);
         }
@@ -75,6 +76,7 @@ public class God : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         getUpdate=false;
         yield return new WaitForSeconds(0.3f);
+        cumulativeHappinessIndex=cumulativeHappinessIndex/houses.Length;
         Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
         yield return new WaitForSeconds(0.3f);
     }
@@ -83,10 +85,13 @@ public class God : MonoBehaviour
 
         cumulativeHappinessIndex=0;
         GameObject[] houses = GameObject.FindGameObjectsWithTag("Houses");
-
+        hospitalPatients=0;
+        schoolStudents=0;
         foreach(GameObject house in houses){
+            if(house.GetComponent<House>()!=null){
             hospitalPatients += house.GetComponent<House>().houseMembers;
             schoolStudents += house.GetComponent<House>().houseMembers;
+            }
         }
 
         //HospitalCapacityCheck
@@ -95,7 +100,7 @@ public class God : MonoBehaviour
         foreach(GameObject hospital in hospitals){
             hospitalCapacity += hospital.GetComponent<Hospital>().capacity;
         }
-        hospitalPatients=0;
+        
         if(hospitalPatients > hospitalCapacity){
             Debug.Log("Hospital Capacity Exceeded");
             cumulativeHappinessIndex-=(hospitalPatients - hospitalCapacity) * hospitalPenalty;
@@ -109,7 +114,6 @@ public class God : MonoBehaviour
         foreach(GameObject school in schools){
             schoolCapacity += school.GetComponent<School>().schoolCapacity;
         }
-        schoolStudents=0;
         if(schoolStudents > schoolCapacity){
             Debug.Log("School Capacity Exceeded");
             cumulativeHappinessIndex -= (schoolStudents - schoolCapacity) * schoolPenalty;

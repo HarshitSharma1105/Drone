@@ -11,6 +11,10 @@ TagManager:
   - Houses
   - Terrain
   - Hospital
+  - Market
+  - School
+  - WaterTank
+  - ElectricalPower
   layers:
   - Default
   - TransparentFX

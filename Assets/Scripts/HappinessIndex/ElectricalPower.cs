@@ -23,6 +23,7 @@ public class ElectricalPower : MonoBehaviour
         capacityLeft=capacity;
         GameObject[] houses=GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
+            if(house.GetComponent<House>()!=null)
             house.GetComponent<House>().hasPower=false;
         }
         Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), powerRadius);
@@ -30,9 +31,11 @@ public class ElectricalPower : MonoBehaviour
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")
                 continue;
-        
-            House housee=house.gameObject.GetComponent<House>();
+            if(house.GetComponent<House>()==null)
+            continue;
 
+            House housee=house.gameObject.GetComponent<House>();
+            housee.powerValue=0;
             if(housee.membersWithoutPower<=capacity){
                 capacityLeft-=housee.membersWithoutPower;
                 housee.powerValue+=housee.membersWithoutPower*God.powerWeightage;
