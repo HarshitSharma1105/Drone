@@ -16,6 +16,8 @@ public class OutlineSelection : MonoBehaviour
     private GameObject selec = null;
     bool donotdestroy = false;
     GameObject curr;
+
+    [SerializeField] private Camera camm;
     private void Start()
     {
 
@@ -24,14 +26,16 @@ public class OutlineSelection : MonoBehaviour
     void Update()
     {
         // Debug.Log(timer);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = camm.ScreenPointToRay(Input.mousePosition);
+        //Debug.Log(ray);
+
 
         if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
         {
-        
-             
+
             if(!donotdestroy)
             {   curr = raycastHit.transform.gameObject;
+                Debug.Log("bsd : " + curr.name);
             if(curr != null ) 
             {
                 if(curr != prev )
@@ -76,6 +80,7 @@ public class OutlineSelection : MonoBehaviour
             {
                 Debug.Log("clickkarra");
                 selec = raycastHit.transform.gameObject;
+                    Debug.Log("hayeeeee" + selec);
                 if(selec != null)
                 {   
                     Debug.Log(selec);
@@ -86,7 +91,7 @@ public class OutlineSelection : MonoBehaviour
                         selec.gameObject.GetComponent<Outline>().OutlineColor = Color.green;
                     }
                 }
-                if(curr != selec)
+                if((curr != selec) || (selec == null))
                  {
                     curr.gameObject.GetComponent<Outline>().enabled = false;
                     donotdestroy = false;

@@ -1,0 +1,509 @@
+Export time: 2023/12/16 22:43:01 IST
+Export duration: 6.204s
+
+Export settings:
+	Export Geometry: Models with Shape Fallback
+	Output Path: C:\Users\nevis\OneDrive - IIT Kanpur\Documents\ArcGIS CityEngine 2023.0\CityEngine2023.0\models\w4sides
+	Simplify Terrain Meshes: true
+	Terrain Layers: Export all selected terrain layers
+	Terrain Mesh Resolution: [ 1024, 1024 ]
+	applicationName: CityEngine
+	applicationString: CityEngine 2023.0.8905 0504R
+	applicationVendor: Esri R&D Center Zurich Inc.
+	applicationVersion: 2023.0.8905 05041641
+	atlasAddWrapBorder: true
+	author: nevishpathe
+	baseName: RelTex
+	collectTextures: false
+	createShapeGroups: false
+	createTextureAtlases: false
+	embedTextures: true
+	encoderID: com.esri.prt.codecs.FBXEncoder
+	encoderName: Autodesk FBX
+	errorFallback: true
+	existingFiles: OVERWRITE
+	facesWithHoles: TRIANGULATE_FACES_WITH_HOLES
+	fileGranularity: START_SHAPE
+	fileType: BINARY
+	globalOffset: [ -8646641.84, -0.0, 3317798.797 ]
+	includeMaterials: true
+	localOffset: NONE
+	maxAtlasDim: 11
+	memoryBudget: 500
+	mergeNormals: true
+	mergeTexcoords: true
+	mergeVertices: true
+	meshGranularity: INSTANCED
+	normalPrecision: 0.001
+	normalsIndexing: INDEXED
+	outputPath: 
+	sceneFile: /CityEngine_Tour/scenes/Riyal/OnlyRelig.cej
+	script: 
+	shapeNameDelimiter: _
+	tempPath: 
+	texcoordPrecision: 1.0E-4
+	textureCoordinates: ALL
+	triangulateMeshes: false
+	vertexNormals: SET_MISSING
+	vertexPrecision: 0.001
+	writeLog: true
+
+Initial shapes:
+	 0 :   OK                ''             OID '8197d808-93e5-11b8-aa67-008088734c99'
+	 1 :   OK                ''             OID '81990e94-93e5-11b8-aa67-008088734c99'
+	 2 :   OK                ''             OID '81996934-93e5-11b8-aa67-008088734c99'
+	 3 :   OK                ''             OID '8199a87c-93e5-11b8-aa67-008088734c99'
+	 4 :   OK                ''             OID '8199dc70-93e5-11b8-aa67-008088734c99'
+	 5 :   OK                ''             OID '819a0f38-93e5-11b8-aa67-008088734c99'
+	 6 :   OK                ''             OID '819a432c-93e5-11b8-aa67-008088734c99'
+	 7 :   OK                ''             OID '819a7720-93e5-11b8-aa67-008088734c99'
+	 8 :   OK                ''             OID '819aa984-93e5-11b8-aa67-008088734c99'
+	 9 :   OK                ''             OID '819adddc-93e5-11b8-aa67-008088734c99'
+	10 :   OK                ''             OID '819b14f0-93e5-11b8-aa67-008088734c99'
+	11 :   OK                ''             OID '819b77c4-93e5-11b8-aa67-008088734c99'
+	12 :   OK                ''             OID '819c0f54-93e5-11b8-aa67-008088734c99'
+	13 :   OK                ''             OID '819cb620-93e5-11b8-aa67-008088734c99'
+	14 :   OK                ''             OID '819d150c-93e5-11b8-aa67-008088734c99'
+	15 :   OK                ''             OID '819d6520-93e5-11b8-aa67-008088734c99'
+	16 :   OK                ''             OID '819d9c34-93e5-11b8-aa67-008088734c99'
+	17 :   OK                ''             OID '819dd1b8-93e5-11b8-aa67-008088734c99'
+	18 :   OK                ''             OID '819e06d8-93e5-11b8-aa67-008088734c99'
+	19 :   OK                ''             OID '819e3b94-93e5-11b8-aa67-008088734c99'
+	20 :   OK                ''             OID '819e7884-93e5-11b8-aa67-008088734c99'
+	21 :   OK                ''             OID '819eab4c-93e5-11b8-aa67-008088734c99'
+	22 :   OK                ''             OID '819ee6ac-93e5-11b8-aa67-008088734c99'
+	23 :   OK                ''             OID '819f2018-93e5-11b8-aa67-008088734c99'
+
+
+
+Files created:
+	'RelTex_.fbx':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 20
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial'                       1  'CityEngineMaterial_2_mat(1),'         9 
+			2  'mesh_CityEngineMaterial_1'                     1  'CityEngineMaterial_1_mat(1),'         9 
+			3  'mesh_CityEngineMaterial_2'                     1  'CityEngineMaterial_mat(1),'           2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                     | Texture_0                 | Texture_1      
+			==+==========================+===========================+================
+			1  'CityEngineMaterial_2_mat' 'u_f009_t008_Other_000.jpg' ''              
+			2  'CityEngineMaterial_1_mat' 'g_f001_t006_Other_000.jpg' ''              
+			3  'CityEngineMaterial_mat'   'flatRoof_4.jpg'            'flatRoof_4.jpg'
+	'RelTex__1.fbx':
+		Initial shapes:
+			1, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_3'                     1  'CityEngineMaterial_3_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_4'                     1  'CityEngineMaterial_1_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                 | Texture_1      
+			==+==========================+===========================+================
+			1  'CityEngineMaterial_3_mat' 'flatRoof_8.jpg'            'flatRoof_8.jpg'
+			2  'CityEngineMaterial_1_mat' 'g_f001_t006_Other_000.jpg' ''              
+	'RelTex__2.fbx':
+		Initial shapes:
+			2, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 18
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_5'                     1  'CityEngineMaterial_5_mat(1),'         8 
+			2  'mesh_CityEngineMaterial_6'                     1  'CityEngineMaterial_6_mat(1),'         8 
+			3  'mesh_CityEngineMaterial_7'                     1  'CityEngineMaterial_4_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                     | Texture_0                 | Texture_1       
+			==+==========================+===========================+=================
+			1  'CityEngineMaterial_5_mat' 'g_f001_t008_Other_000.jpg' ''               
+			2  'CityEngineMaterial_6_mat' 'u_f003_t004_Other_000.jpg' ''               
+			3  'CityEngineMaterial_4_mat' 'flatRoof_12.jpg'           'flatRoof_12.jpg'
+	'RelTex__3.fbx':
+		Initial shapes:
+			3, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                     | Polygons 
+			==+============================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_8'                      1  'CityEngineMaterial_8_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_9'                      1  'CityEngineMaterial_5_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_10'                     1  'CityEngineMaterial_7_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                     | Texture_0                 | Texture_1       
+			==+==========================+===========================+=================
+			1  'CityEngineMaterial_8_mat' 'u_f005_t005_Other_001.jpg' ''               
+			2  'CityEngineMaterial_5_mat' 'g_f001_t008_Other_000.jpg' ''               
+			3  'CityEngineMaterial_7_mat' 'flatRoof_21.jpg'           'flatRoof_21.jpg'
+	'RelTex__4.fbx':
+		Initial shapes:
+			4, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_11'                     1  'CityEngineMaterial_9_mat(1),'          2 
+			2  'mesh_CityEngineMaterial_12'                     1  'CityEngineMaterial_10_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_13'                     1  'CityEngineMaterial_11_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_9_mat'  'flatRoof_27.jpg'           'flatRoof_27.jpg'
+			2  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''               
+			3  'CityEngineMaterial_11_mat' 'u_f005_t006_Other_000.jpg' ''               
+	'RelTex__5.fbx':
+		Initial shapes:
+			5, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_14'                     1  'CityEngineMaterial_8_mat(1),'          4 
+			2  'mesh_CityEngineMaterial_15'                     1  'CityEngineMaterial_5_mat(1),'          4 
+			3  'mesh_CityEngineMaterial_16'                     1  'CityEngineMaterial_12_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_8_mat'  'u_f005_t005_Other_001.jpg' ''               
+			2  'CityEngineMaterial_5_mat'  'g_f001_t008_Other_000.jpg' ''               
+			3  'CityEngineMaterial_12_mat' 'flatRoof_22.jpg'           'flatRoof_22.jpg'
+	'RelTex__6.fbx':
+		Initial shapes:
+			6, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 14
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_17'                     1  'CityEngineMaterial_14_mat(1),'         6 
+			2  'mesh_CityEngineMaterial_18'                     1  'CityEngineMaterial_10_mat(1),'         6 
+			3  'mesh_CityEngineMaterial_19'                     1  'CityEngineMaterial_13_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_14_mat' 'u_f005_t006_Other_001.jpg' ''              
+			2  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''              
+			3  'CityEngineMaterial_13_mat' 'flatRoof_3.jpg'            'flatRoof_3.jpg'
+	'RelTex__7.fbx':
+		Initial shapes:
+			7, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 18
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_20'                     1  'CityEngineMaterial_15_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_21'                     1  'CityEngineMaterial_10_mat(1),'         8 
+			3  'mesh_CityEngineMaterial_22'                     1  'CityEngineMaterial_11_mat(1),'         8 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_15_mat' 'flatRoof_27.jpg'           'flatRoof_27.jpg'
+			2  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''               
+			3  'CityEngineMaterial_11_mat' 'u_f005_t006_Other_000.jpg' ''               
+	'RelTex__8.fbx':
+		Initial shapes:
+			8, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_23'                     1  'CityEngineMaterial_16_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_24'                     1  'CityEngineMaterial_17_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_25'                     1  'CityEngineMaterial_1_mat(1),'          4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_16_mat' 'flatRoof_4.jpg'            'flatRoof_4.jpg'
+			2  'CityEngineMaterial_17_mat' 'u_f008_t004_Other_000.jpg' ''              
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''              
+	'RelTex__9.fbx':
+		Initial shapes:
+			9, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 12
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_26'                     1  'CityEngineMaterial_5_mat(1),'          5 
+			2  'mesh_CityEngineMaterial_27'                     1  'CityEngineMaterial_18_mat(1),'         2 
+			3  'mesh_CityEngineMaterial_28'                     1  'CityEngineMaterial_19_mat(1),'         5 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_5_mat'  'g_f001_t008_Other_000.jpg' ''               
+			2  'CityEngineMaterial_18_mat' 'flatRoof_17.jpg'           'flatRoof_17.jpg'
+			3  'CityEngineMaterial_19_mat' 'u_f004_t003_Other_000.jpg' ''               
+	'RelTex__10.fbx':
+		Initial shapes:
+			10, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 22
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_29'                     1  'CityEngineMaterial_21_mat(1),'        10 
+			2  'mesh_CityEngineMaterial_30'                     1  'CityEngineMaterial_20_mat(1),'         2 
+			3  'mesh_CityEngineMaterial_31'                     1  'CityEngineMaterial_1_mat(1),'         10 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_21_mat' 'u_f001_t004_Other_000.jpg' ''              
+			2  'CityEngineMaterial_20_mat' 'flatRoof_9.jpg'            'flatRoof_9.jpg'
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''              
+	'RelTex__11.fbx':
+		Initial shapes:
+			11, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 18
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_32'                     1  'CityEngineMaterial_22_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_33'                     1  'CityEngineMaterial_21_mat(1),'         8 
+			3  'mesh_CityEngineMaterial_34'                     1  'CityEngineMaterial_1_mat(1),'          8 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_22_mat' 'flatRoof_10.jpg'           'flatRoof_10.jpg'
+			2  'CityEngineMaterial_21_mat' 'u_f001_t004_Other_000.jpg' ''               
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''               
+	'RelTex__12.fbx':
+		Initial shapes:
+			12, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 14
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_35'                     1  'CityEngineMaterial_21_mat(1),'         6 
+			2  'mesh_CityEngineMaterial_36'                     1  'CityEngineMaterial_23_mat(1),'         2 
+			3  'mesh_CityEngineMaterial_37'                     1  'CityEngineMaterial_1_mat(1),'          6 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_21_mat' 'u_f001_t004_Other_000.jpg' ''              
+			2  'CityEngineMaterial_23_mat' 'flatRoof_7.jpg'            'flatRoof_7.jpg'
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''              
+	'RelTex__13.fbx':
+		Initial shapes:
+			13, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_38'                     1  'CityEngineMaterial_24_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_39'                     1  'CityEngineMaterial_10_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_40'                     1  'CityEngineMaterial_25_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_24_mat' 'flatRoof_33.jpg'           'flatRoof_33.jpg'
+			2  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''               
+			3  'CityEngineMaterial_25_mat' 'u_f007_t006_Other_000.jpg' ''               
+	'RelTex__14.fbx':
+		Initial shapes:
+			14, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_41'                     1  'CityEngineMaterial_26_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_42'                     1  'CityEngineMaterial_21_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_43'                     1  'CityEngineMaterial_1_mat(1),'          4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_26_mat' 'flatRoof_9.jpg'            'flatRoof_9.jpg'
+			2  'CityEngineMaterial_21_mat' 'u_f001_t004_Other_000.jpg' ''              
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''              
+	'RelTex__15.fbx':
+		Initial shapes:
+			15, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_44'                     1  'CityEngineMaterial_21_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_45'                     1  'CityEngineMaterial_1_mat(1),'          4 
+			3  'mesh_CityEngineMaterial_46'                     1  'CityEngineMaterial_27_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_21_mat' 'u_f001_t004_Other_000.jpg' ''              
+			2  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''              
+			3  'CityEngineMaterial_27_mat' 'flatRoof_9.jpg'            'flatRoof_9.jpg'
+	'RelTex__16.fbx':
+		Initial shapes:
+			16, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_47'                     1  'CityEngineMaterial_10_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_48'                     1  'CityEngineMaterial_25_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_49'                     1  'CityEngineMaterial_28_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''               
+			2  'CityEngineMaterial_25_mat' 'u_f007_t006_Other_000.jpg' ''               
+			3  'CityEngineMaterial_28_mat' 'flatRoof_35.jpg'           'flatRoof_35.jpg'
+	'RelTex__17.fbx':
+		Initial shapes:
+			17, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_50'                     1  'CityEngineMaterial_5_mat(1),'          4 
+			2  'mesh_CityEngineMaterial_51'                     1  'CityEngineMaterial_29_mat(1),'         2 
+			3  'mesh_CityEngineMaterial_52'                     1  'CityEngineMaterial_19_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_5_mat'  'g_f001_t008_Other_000.jpg' ''               
+			2  'CityEngineMaterial_29_mat' 'flatRoof_18.jpg'           'flatRoof_18.jpg'
+			3  'CityEngineMaterial_19_mat' 'u_f004_t003_Other_000.jpg' ''               
+	'RelTex__18.fbx':
+		Initial shapes:
+			18, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_53'                     1  'CityEngineMaterial_2_mat(1),'          4 
+			2  'mesh_CityEngineMaterial_54'                     1  'CityEngineMaterial_30_mat(1),'         2 
+			3  'mesh_CityEngineMaterial_55'                     1  'CityEngineMaterial_1_mat(1),'          4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_2_mat'  'u_f009_t008_Other_000.jpg' ''              
+			2  'CityEngineMaterial_30_mat' 'flatRoof_6.jpg'            'flatRoof_6.jpg'
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''              
+	'RelTex__19.fbx':
+		Initial shapes:
+			19, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_56'                     1  'CityEngineMaterial_31_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_57'                     1  'CityEngineMaterial_17_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_58'                     1  'CityEngineMaterial_1_mat(1),'          4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_31_mat' 'flatRoof_39.jpg'           'flatRoof_39.jpg'
+			2  'CityEngineMaterial_17_mat' 'u_f008_t004_Other_000.jpg' ''               
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''               
+	'RelTex__20.fbx':
+		Initial shapes:
+			20, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_59'                     1  'CityEngineMaterial_14_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_60'                     1  'CityEngineMaterial_32_mat(1),'         2 
+			3  'mesh_CityEngineMaterial_61'                     1  'CityEngineMaterial_10_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1      
+			==+===========================+===========================+================
+			1  'CityEngineMaterial_14_mat' 'u_f005_t006_Other_001.jpg' ''              
+			2  'CityEngineMaterial_32_mat' 'flatRoof_3.jpg'            'flatRoof_3.jpg'
+			3  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''              
+	'RelTex__21.fbx':
+		Initial shapes:
+			21, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_62'                     1  'CityEngineMaterial_33_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_63'                     1  'CityEngineMaterial_10_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_64'                     1  'CityEngineMaterial_11_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_33_mat' 'flatRoof_26.jpg'           'flatRoof_26.jpg'
+			2  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''               
+			3  'CityEngineMaterial_11_mat' 'u_f005_t006_Other_000.jpg' ''               
+	'RelTex__22.fbx':
+		Initial shapes:
+			22, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 10
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_65'                     1  'CityEngineMaterial_34_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_66'                     1  'CityEngineMaterial_10_mat(1),'         4 
+			3  'mesh_CityEngineMaterial_67'                     1  'CityEngineMaterial_11_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_34_mat' 'flatRoof_27.jpg'           'flatRoof_27.jpg'
+			2  'CityEngineMaterial_10_mat' 'g_f001_t005_Other_000.jpg' ''               
+			3  'CityEngineMaterial_11_mat' 'u_f005_t006_Other_000.jpg' ''               
+	'RelTex__23.fbx':
+		Initial shapes:
+			23, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 14
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_68'                     1  'CityEngineMaterial_35_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_69'                     1  'CityEngineMaterial_2_mat(1),'          6 
+			3  'mesh_CityEngineMaterial_70'                     1  'CityEngineMaterial_1_mat(1),'          6 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                      | Texture_0                 | Texture_1       
+			==+===========================+===========================+=================
+			1  'CityEngineMaterial_35_mat' 'flatRoof_40.jpg'           'flatRoof_40.jpg'
+			2  'CityEngineMaterial_2_mat'  'u_f009_t008_Other_000.jpg' ''               
+			3  'CityEngineMaterial_1_mat'  'g_f001_t006_Other_000.jpg' ''               

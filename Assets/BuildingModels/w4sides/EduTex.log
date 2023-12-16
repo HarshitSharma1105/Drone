@@ -1,0 +1,412 @@
+Export time: 2023/12/16 23:25:32 IST
+Export duration: 16.354s
+
+Export settings:
+	Export Geometry: Models with Shape Fallback
+	Output Path: C:\Users\nevis\OneDrive - IIT Kanpur\Documents\ArcGIS CityEngine 2023.0\CityEngine2023.0\models\w4sides
+	Simplify Terrain Meshes: true
+	Terrain Layers: Export all selected terrain layers
+	Terrain Mesh Resolution: [ 1024, 1024 ]
+	applicationName: CityEngine
+	applicationString: CityEngine 2023.0.8905 0504R
+	applicationVendor: Esri R&D Center Zurich Inc.
+	applicationVersion: 2023.0.8905 05041641
+	atlasAddWrapBorder: true
+	author: nevishpathe
+	baseName: EduTex
+	collectTextures: false
+	createShapeGroups: false
+	createTextureAtlases: false
+	embedTextures: true
+	encoderID: com.esri.prt.codecs.FBXEncoder
+	encoderName: Autodesk FBX
+	errorFallback: true
+	existingFiles: OVERWRITE
+	facesWithHoles: TRIANGULATE_FACES_WITH_HOLES
+	fileGranularity: START_SHAPE
+	fileType: BINARY
+	globalOffset: [ -8646641.84, -0.0, 3317798.797 ]
+	includeMaterials: true
+	localOffset: NONE
+	maxAtlasDim: 11
+	memoryBudget: 500
+	mergeNormals: true
+	mergeTexcoords: true
+	mergeVertices: true
+	meshGranularity: INSTANCED
+	normalPrecision: 0.001
+	normalsIndexing: INDEXED
+	outputPath: 
+	sceneFile: /CityEngine_Tour/scenes/Riyal/OnlyEdu.cej
+	script: 
+	shapeNameDelimiter: _
+	tempPath: 
+	texcoordPrecision: 1.0E-4
+	textureCoordinates: ALL
+	triangulateMeshes: false
+	vertexNormals: SET_MISSING
+	vertexPrecision: 0.001
+	writeLog: true
+
+Initial shapes:
+	 0 :   OK                ''             OID 'f2e36f94-93cd-11b8-aa67-008088734c99'
+	 1 :   OK                ''             OID 'f2e80b44-93cd-11b8-aa67-008088734c99'
+	 2 :   OK                ''             OID 'f2e8e9ec-93cd-11b8-aa67-008088734c99'
+	 3 :   OK                ''             OID 'f2e99d9c-93cd-11b8-aa67-008088734c99'
+	 4 :   OK                ''             OID 'f2ea6344-93cd-11b8-aa67-008088734c99'
+	 5 :   OK                ''             OID 'f2eb07b8-93cd-11b8-aa67-008088734c99'
+	 6 :   OK                ''             OID 'f2eb9bc4-93cd-11b8-aa67-008088734c99'
+	 7 :   OK                ''             OID 'f2ec2be8-93cd-11b8-aa67-008088734c99'
+	 8 :   OK                ''             OID 'f2ecd5d4-93cd-11b8-aa67-008088734c99'
+	 9 :   OK                ''             OID 'f2ed67ec-93cd-11b8-aa67-008088734c99'
+	10 :   OK                ''             OID 'f2edf748-93cd-11b8-aa67-008088734c99'
+	11 :   OK                ''             OID 'f2ee86a4-93cd-11b8-aa67-008088734c99'
+	12 :   OK                ''             OID 'f2ef1a4c-93cd-11b8-aa67-008088734c99'
+	13 :   OK                ''             OID 'f2efa87c-93cd-11b8-aa67-008088734c99'
+	14 :   OK                ''             OID 'f2f01834-93cd-11b8-aa67-008088734c99'
+	15 :   OK                ''             OID 'f2f082d8-93cd-11b8-aa67-008088734c99'
+	16 :   OK                ''             OID 'f2f0ebec-93cd-11b8-aa67-008088734c99'
+	17 :   OK                ''             OID 'f2f15b40-93cd-11b8-aa67-008088734c99'
+	18 :   OK                ''             OID 'f2f1c710-93cd-11b8-aa67-008088734c99'
+	19 :   OK                ''             OID 'f2f23600-93cd-11b8-aa67-008088734c99'
+	20 :   OK                ''             OID 'f2f30314-93cd-11b8-aa67-008088734c99'
+
+
+
+Files created:
+	'EduTex_.fbx':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 7
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial'                       1  'CityEngineMaterial_mat(1),'           2 
+			2  'mesh_CityEngineMaterial_1'                     1  'CityEngineMaterial_1_mat(1),'         5 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_mat'   'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_1_mat' 'u_f003_t003_Educational_001.jpg' ''               
+	'EduTex__1.fbx':
+		Initial shapes:
+			1, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_2'                     1  'CityEngineMaterial_2_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_3'                     1  'CityEngineMaterial_mat(1),'           2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_2_mat' 'u_f006_t004_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_mat'   'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__2.fbx':
+		Initial shapes:
+			2, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_4'                     1  'CityEngineMaterial_3_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_5'                     1  'CityEngineMaterial_mat(1),'           2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_3_mat' 'u_f002_t006_Educational_001.jpg' ''               
+			2  'CityEngineMaterial_mat'   'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__3.fbx':
+		Initial shapes:
+			3, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 8
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_6'                     1  'CityEngineMaterial_4_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_7'                     1  'CityEngineMaterial_5_mat(1),'         6 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_4_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_5_mat' 'u_f002_t005_Educational_000.jpg' ''               
+	'EduTex__4.fbx':
+		Initial shapes:
+			4, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                      | Instance Occurrences | Material                     | Polygons 
+			==+===========================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_8'                     1  'CityEngineMaterial_4_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_9'                     1  'CityEngineMaterial_6_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_4_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_6_mat' 'u_f003_t006_Educational_000.jpg' ''               
+	'EduTex__5.fbx':
+		Initial shapes:
+			5, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                     | Polygons 
+			==+============================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_10'                     1  'CityEngineMaterial_4_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_11'                     1  'CityEngineMaterial_7_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_4_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_7_mat' 'u_f005_t008_Educational_000.jpg' ''               
+	'EduTex__6.fbx':
+		Initial shapes:
+			6, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                     | Polygons 
+			==+============================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_12'                     1  'CityEngineMaterial_9_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_13'                     1  'CityEngineMaterial_8_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_9_mat' 'u_f002_t012_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_8_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__7.fbx':
+		Initial shapes:
+			7, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_14'                     1  'CityEngineMaterial_5_mat(1),'          4 
+			2  'mesh_CityEngineMaterial_15'                     1  'CityEngineMaterial_10_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_5_mat'  'u_f002_t005_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_10_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__8.fbx':
+		Initial shapes:
+			8, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_16'                     1  'CityEngineMaterial_12_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_17'                     1  'CityEngineMaterial_11_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_12_mat' 'u_f004_t006_Educational_001.jpg' ''               
+			2  'CityEngineMaterial_11_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__9.fbx':
+		Initial shapes:
+			9, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_18'                     1  'CityEngineMaterial_11_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_19'                     1  'CityEngineMaterial_1_mat(1),'          4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_11_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_1_mat'  'u_f003_t003_Educational_001.jpg' ''               
+	'EduTex__10.fbx':
+		Initial shapes:
+			10, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 8
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_20'                     1  'CityEngineMaterial_10_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_21'                     1  'CityEngineMaterial_13_mat(1),'         6 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_10_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_13_mat' 'u_f003_t013_Educational_000.jpg' ''               
+	'EduTex__11.fbx':
+		Initial shapes:
+			11, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_22'                     1  'CityEngineMaterial_10_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_23'                     1  'CityEngineMaterial_14_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_10_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_14_mat' 'u_f004_t012_Educational_000.jpg' ''               
+	'EduTex__12.fbx':
+		Initial shapes:
+			12, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_24'                     1  'CityEngineMaterial_15_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_25'                     1  'CityEngineMaterial_mat(1),'            2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_15_mat' 'u_f004_t006_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_mat'    'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__13.fbx':
+		Initial shapes:
+			13, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_26'                     1  'CityEngineMaterial_16_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_27'                     1  'CityEngineMaterial_mat(1),'            2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_16_mat' 'u_f002_t006_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_mat'    'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__14.fbx':
+		Initial shapes:
+			14, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_28'                     1  'CityEngineMaterial_10_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_29'                     1  'CityEngineMaterial_17_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_10_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_17_mat' 'u_f003_t003_Educational_000.jpg' ''               
+	'EduTex__15.fbx':
+		Initial shapes:
+			15, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                     | Polygons 
+			==+============================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_30'                     1  'CityEngineMaterial_9_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_31'                     1  'CityEngineMaterial_8_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_9_mat' 'u_f002_t012_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_8_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__16.fbx':
+		Initial shapes:
+			16, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_32'                     1  'CityEngineMaterial_17_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_33'                     1  'CityEngineMaterial_mat(1),'            2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_17_mat' 'u_f003_t003_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_mat'    'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__17.fbx':
+		Initial shapes:
+			17, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_34'                     1  'CityEngineMaterial_3_mat(1),'          4 
+			2  'mesh_CityEngineMaterial_35'                     1  'CityEngineMaterial_11_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_3_mat'  'u_f002_t006_Educational_001.jpg' ''               
+			2  'CityEngineMaterial_11_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__18.fbx':
+		Initial shapes:
+			18, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_36'                     1  'CityEngineMaterial_10_mat(1),'         2 
+			2  'mesh_CityEngineMaterial_37'                     1  'CityEngineMaterial_18_mat(1),'         4 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_10_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+			2  'CityEngineMaterial_18_mat' 'u_f002_t005_Educational_001.jpg' ''               
+	'EduTex__19.fbx':
+		Initial shapes:
+			19, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 6
+			  | Name                       | Instance Occurrences | Material                     | Polygons 
+			==+============================+======================+==============================+==========
+			1  'mesh_CityEngineMaterial_38'                     1  'CityEngineMaterial_9_mat(1),'         4 
+			2  'mesh_CityEngineMaterial_39'                     1  'CityEngineMaterial_8_mat(1),'         2 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                     | Texture_0                       | Texture_1       
+			==+==========================+=================================+=================
+			1  'CityEngineMaterial_9_mat' 'u_f002_t012_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_8_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
+	'EduTex__20.fbx':
+		Initial shapes:
+			20, 
+		GEOMETRY:
+			Total Meshes: 2
+			Total Polygons: 36
+			  | Name                       | Instance Occurrences | Material                      | Polygons 
+			==+============================+======================+===============================+==========
+			1  'mesh_CityEngineMaterial_40'                     1  'CityEngineMaterial_19_mat(1),'        12 
+			2  'mesh_CityEngineMaterial_41'                     1  'CityEngineMaterial_11_mat(1),'        24 
+		MATERIAL:
+			Total Materials: 2
+			  | Name                      | Texture_0                       | Texture_1       
+			==+===========================+=================================+=================
+			1  'CityEngineMaterial_19_mat' 'u_f002_t002_Educational_000.jpg' ''               
+			2  'CityEngineMaterial_11_mat' 'flatRoof_10.jpg'                 'flatRoof_10.jpg'
