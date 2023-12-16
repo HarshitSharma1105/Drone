@@ -5,20 +5,16 @@ public class Hospital : MonoBehaviour
 
     public int capacity=20;
 
-    private float time=0;
     void Start()
     {
-
+        God.getUpdate=true;
         gameObject.tag="Hospital";
     }
 
     void Update()
     {
-        time += Time.deltaTime;
-        if(time > 5){
-            //RealTimeUpdate();
-            time = 0;
-        }
-        
+
+            //UpdateValues();
     }
+        
 }
