@@ -34,7 +34,7 @@ public class House : MonoBehaviour
     
     void Start(){
         isUpdating=true;
-        gameObject.tag="House";
+        gameObject.tag="Houses";
     }
     void Update()
     {
@@ -56,7 +56,7 @@ public class House : MonoBehaviour
         Collider[] neighbourhood = Physics.OverlapSphere(transform.position, 2.5f*houseRadius);
         int neighbourhoodCount = 0;
         foreach (Collider c in neighbourhood){
-            if(c.gameObject.tag == "House"){
+            if(c.gameObject.tag == "Houses"){
                 neighbourhoodValue.x += c.gameObject.GetComponent<House>().houseValue.x;
                 neighbourhoodCount++;
             }

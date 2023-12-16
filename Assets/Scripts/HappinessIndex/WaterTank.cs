@@ -21,14 +21,14 @@ public class WaterTank : MonoBehaviour
 
     private void UpdateValues(){
         capacityLeft=capacity;
-        GameObject[] houses=GameObject.FindGameObjectsWithTag("House");
+        GameObject[] houses=GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
             house.GetComponent<House>().hasWater=false;
         }
         Collider[] housesInRange=Physics.OverlapSphere(transform.position, waterRadius);
 
         foreach(Collider house in housesInRange){
-            if(house.gameObject.tag != "House")
+            if(house.gameObject.tag != "Houses")
                 continue;
             
             House housee=house.gameObject.GetComponent<House>();

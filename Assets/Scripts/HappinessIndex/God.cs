@@ -55,7 +55,7 @@ public class God : MonoBehaviour
     IEnumerator GetUpdates(){
         UpdateValues();
         Debug.Log("Running Updates");
-        GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
+        GameObject[] houses = GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
             house.GetComponent<House>().isUpdating=true;
             //Debug.Log("Updating House: "+house.name);
@@ -82,7 +82,7 @@ public class God : MonoBehaviour
     private void UpdateValues(){
 
         cumulativeHappinessIndex=0;
-        GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
+        GameObject[] houses = GameObject.FindGameObjectsWithTag("Houses");
 
 
 
