@@ -7,9 +7,9 @@ public class House : MonoBehaviour
     [HideInInspector] public bool isUpdating=false;
     public float happinessIndex;
     
-    public int houseMembers;
+    public int houseMembers=4;
     public float houseRadius=2f;
-    public Vector2 houseValue;
+    public Vector2 houseValue=new Vector2(1,0);
     [SerializeField] private float roadValue;
     [SerializeField] private Vector2 neighbourhoodValue;
 

@@ -145,7 +145,7 @@ public class RoadManager : MonoBehaviour
     public int calculateCost(){
         n = distance/UnitValueForRoad;
         costOfRoad = n*pricePerUnit;
-        return costOfRoad;
+        return (int)costOfRoad;
     }
 
     public void cancelPressed(){
