@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SaveLoadManager : MonoBehaviour
 {
-   
+
     private void Start()
     {
-            LoadTrackedObjectsData();
+        LoadTrackedObjectsData();
     }
     public void SaveTrackedObjectsData()
     {
@@ -20,19 +21,19 @@ public class SaveLoadManager : MonoBehaviour
             serializedObjects.list.Add(serializedObj);
         }
         string json = JsonUtility.ToJson(serializedObjects);
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/trackedObjectsData.json", json);
+        string savePath = Path.Combine(Application.streamingAssetsPath, "trackedObjectsData.json");
+        File.WriteAllText(savePath, json);
     }
 
     public void LoadTrackedObjectsData()
     {
-        string path = Application.persistentDataPath + "/trackedObjectsData.json";
+        string path = Path.Combine(Application.streamingAssetsPath, "trackedObjectsData.json"); ;
         if (System.IO.File.Exists(path))
         {
             Debug.Log(this);
             string json = System.IO.File.ReadAllText(path);
 
             SerializedGameObjectList serializedObjects = JsonUtility.FromJson<SerializedGameObjectList>(json);
-            Debug.Log(serializedObjects.list.Count);
 
             foreach (SerializedGameObject serializedObj in serializedObjects.list)
             {
