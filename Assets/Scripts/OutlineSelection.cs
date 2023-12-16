@@ -10,86 +10,99 @@ public class OutlineSelection : MonoBehaviour
     private RaycastHit raycastHit;
     private Transform gg;
     private bool selected;
+    private float timer = 0.0f;
     Outline outline;
+    private GameObject prev = null;
+    private GameObject selec = null;
+    bool donotdestroy = false;
+    GameObject curr;
     private void Start()
     {
-        outline = gameObject.AddComponent<Outline>();
-        gameObject.GetComponent<Outline>().OutlineColor = Color.red;
-        gameObject.GetComponent<Outline>().OutlineWidth = 7.0f;
-        outline.enabled = false;
-        gg = transform.Find("FloatStuff");
+
     }
 
     void Update()
     {
-        /* Debug.Log("high");
-        Debug.Log(highlight);
-        Debug.Log("sele");  
-        Debug.Log(selection); */
-        // Highlight
-
-        if (highlight != null)
-        {
-            highlight.gameObject.GetComponent<Outline>().enabled = false;
-            highlight = null;
-        }
-        
+        // Debug.Log(timer);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
         {
-            if (raycastHit.transform == gameObject.transform)
+        
+             
+            if(!donotdestroy)
+            {   curr = raycastHit.transform.gameObject;
+            if(curr != null ) 
             {
-                outline.enabled = true;
+                if(curr != prev )
+                {
+                    if (prev != null && prev.GetComponent<Outline>() != null )
+                    {
+                        
+                        prev.GetComponent<Outline>().enabled = false;
+                        Destroy(prev.GetComponent<Outline>());
+                    }
+
+                    if(curr.GetComponent<Outline>() == null)
+                    {
+                       
+                        curr.AddComponent<Outline>();
+                        curr.GetComponent<Outline>().OutlineColor = Color.blue;
+                        curr.GetComponent<Outline>().OutlineWidth = 10f;
+                        curr.GetComponent<Outline>().enabled = true;
+                        prev = curr;
+                    }
+                }
             }
-            else if (selected == true) { outline.enabled = true; }
-            else { outline.enabled = false; }
+            else
+            {
+                if (prev != null && prev.GetComponent<Outline>() != null)
+                {
+                    
+                    prev.GetComponent<Outline>().enabled = false;
+                    Destroy(prev.GetComponent<Outline>());
+                    prev = null;
+                }
+            }
+         
         }
+        
         // Selection
 
         if (Input.GetMouseButtonDown(0))
         {
-            /*
-             if (highlight)
-            {
-                if (selection != null)
-                {
-                    selection.gameObject.GetComponent<Outline>().enabled = false;
-                }
-                selection = raycastHit.transform;
-                selection.gameObject.GetComponent<Outline>().enabled = true;
-                highlight = null;
-            }
-            else
-            {
-                if (selection)
-                {
-                    selection.gameObject.GetComponent<Outline>().enabled = false;
-                    selection = null;
-                }
-            }
-            */
+
             if (Physics.Raycast(ray, out raycastHit))
             {
                 Debug.Log("clickkarra");
-                testt = raycastHit.transform;
-                if ((testt != gameObject.transform))
-                {
-                    selected = false;
+                selec = raycastHit.transform.gameObject;
+                if(selec != null)
+                {   
+                    Debug.Log(selec);
+                    donotdestroy = true;
+                    if(selec.gameObject.GetComponent<Outline>() != null)
+                    {
+                        selec.gameObject.GetComponent<Outline>().enabled = true;
+                        selec.gameObject.GetComponent<Outline>().OutlineColor = Color.green;
+                    }
                 }
-                else if ((testt == gameObject.transform))
-                {
-                    selected = true;
-                }
+                if(curr != selec)
+                 {
+                    curr.gameObject.GetComponent<Outline>().enabled = false;
+                    donotdestroy = false;
+
+                 }
+                
             }
+        }
         }
         
         //laga.gameObject.SetActive(false);
         //if(highlight != null) laga.gameObject.SetActive(true);
         //if(selection != null) laga.gameObject.SetActive(true);
         
-        if(selected) gg.gameObject.SetActive(true);
-        else gg.gameObject.SetActive(false);
+        // if(selected) gg.gameObject.SetActive(true);
+        // else gg.gameObject.SetActive(false);
 
     }
 
