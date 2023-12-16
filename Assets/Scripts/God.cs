@@ -58,18 +58,23 @@ public class God : MonoBehaviour
             house.GetComponent<House>().isUpdating=true;
             //Debug.Log("Updating House: "+house.name);
         }
-        yield return new WaitForSeconds(0.5f);
+
+
+        yield return new WaitForSeconds(0.3f);
         GameObject[] waterTanks = GameObject.FindGameObjectsWithTag("WaterTank");
         foreach(GameObject waterTank in waterTanks){
             waterTank.GetComponent<WaterTank>().isUpdating=true;
-            //Debug.Log("Updating WaterTank: "+waterTank.name);
         }
-        
+
+        GameObject[] electricalPowers = GameObject.FindGameObjectsWithTag("ElectricalPower");
+        foreach(GameObject electricalPower in electricalPowers){
+            electricalPower.GetComponent<ElectricalPower>().isUpdating=true;
+        }
         yield return new WaitForSeconds(0.3f);
         getUpdate=false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
     }
 
     private void UpdateValues(){

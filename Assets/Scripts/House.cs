@@ -98,6 +98,11 @@ public class House : MonoBehaviour
             Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
         }
 
+        //power
+        if(!hasPower){
+            Debug.Log("No Power at: "+gameObject.name + " with " + membersWithoutPower);
+        }
+
         God.cumulativeHappinessIndex += happinessIndex;
 
         
@@ -116,5 +121,7 @@ public class House : MonoBehaviour
         happinessIndex = 0;
         waterValue = 0;
         membersWithoutWater = houseMembers;
+        powerValue = 0;
+        membersWithoutPower = houseMembers;
     }
 }
