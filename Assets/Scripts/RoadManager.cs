@@ -8,10 +8,22 @@ public class RoadManager : MonoBehaviour
 
     GameObject arrowstart;
     GameObject arrowend;
+
+    public float UnitValueForRoad = 100f;
+
+    public float pricePerUnit = 10f;
+
+    private float costOfRoad;
+
+    private float n = 1f;
     
     public GameObject Create;
     
     public GameObject Cancel;
+
+    private float distance;
+
+    public CostManager costManager;
 
     GameObject road;
 
@@ -93,7 +105,7 @@ public class RoadManager : MonoBehaviour
     void CreateRoad(Vector3 startPoint, Vector3 endPoint)
     {
         Vector3 direction = endPoint - startPoint;
-        float distance = Vector3.Distance(startPoint, endPoint);
+        distance = Vector3.Distance(startPoint, endPoint);
 
         // Instantiate the road prefab
 
@@ -117,9 +129,23 @@ public class RoadManager : MonoBehaviour
         Destroy(arrowend);
         Create.SetActive(false);
         Cancel.SetActive(false);
+
+        //cost logic always to be used
+        int cost = calculateCost();
+        if (costManager != null)
+        {
+            costManager.deductCost(cost);
+        }
+
+
         isStart = 1;
         Debug.Log(isStart);
-        
+    }
+
+    public int calculateCost(){
+        n = distance/UnitValueForRoad;
+        costOfRoad = n*pricePerUnit;
+        return costOfRoad;
     }
 
     public void cancelPressed(){
@@ -138,3 +164,5 @@ public class RoadManager : MonoBehaviour
         Debug.Log("Path is not clear. Cannot create road.");
     }
 }
+
+
