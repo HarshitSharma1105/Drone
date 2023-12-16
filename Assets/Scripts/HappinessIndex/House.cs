@@ -115,6 +115,7 @@ public class House : MonoBehaviour
         GameObject[] markets = GameObject.FindGameObjectsWithTag("Market");
         foreach (GameObject market in markets){
             float distance = Vector3.Distance(God.GetCentre(gameObject), God.GetCentre(market));
+            if(distance < 20f)
             marketValue += marketDistanceScaling * Calc(distance) * God.marketWeightage;        //the scaling function has to be changed to a more realistic one
         }
         happinessIndex += marketValue;

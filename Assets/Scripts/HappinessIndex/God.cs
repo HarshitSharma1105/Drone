@@ -76,6 +76,7 @@ public class God : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         getUpdate=false;
         yield return new WaitForSeconds(0.3f);
+        cumulativeHappinessIndex=cumulativeHappinessIndex/houses.Length;
         Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
         yield return new WaitForSeconds(0.3f);
     }
