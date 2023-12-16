@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 7653538bb81b9024cad739d70b7d1cd8
+  productGUID: b3c41c8c9dc40814fad71f5ccb75073e
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: City
+  productName: PanchayatiRaj
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -834,14 +834,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: City
+  metroPackageName: PanchayatiRaj
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: City
+  metroApplicationDescription: PanchayatiRaj
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -910,10 +910,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 9a8457d3-fc0f-495d-99b5-c82a5a010a71
+  cloudProjectId: 798c1c6f-7bf8-4129-83d1-5c30f1a2bac7
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: City
+  projectName: PanchayatiRaj
   organizationId: immortal2099
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
