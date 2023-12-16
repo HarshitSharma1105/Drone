@@ -25,7 +25,7 @@ public class ElectricalPower : MonoBehaviour
         foreach(GameObject house in houses){
             house.GetComponent<House>().hasPower=false;
         }
-        Collider[] housesInRange=Physics.OverlapSphere(transform.position, powerRadius);
+        Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), powerRadius);
 
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")

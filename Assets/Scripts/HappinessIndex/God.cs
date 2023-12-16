@@ -122,4 +122,14 @@ public class God : MonoBehaviour
             Debug.Log("No Market");
         }
     }
+
+    public static Vector3 GetCentre(GameObject obj){
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+        Bounds bound=renderers[0].bounds;
+        foreach(Renderer renderer in renderers){
+            bound.Encapsulate(renderer.bounds);
+        }
+        bound.Encapsulate(obj.GetComponent<Renderer>().bounds);
+        return bound.center;
+    }
 }

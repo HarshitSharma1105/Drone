@@ -25,7 +25,7 @@ public class WaterTank : MonoBehaviour
         foreach(GameObject house in houses){
             house.GetComponent<House>().hasWater=false;
         }
-        Collider[] housesInRange=Physics.OverlapSphere(transform.position, waterRadius);
+        Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), waterRadius);
 
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")

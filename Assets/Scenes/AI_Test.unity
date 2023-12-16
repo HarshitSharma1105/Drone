@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 35331736}
   - component: {fileID: 35331735}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Market
   m_TagString: Market
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
