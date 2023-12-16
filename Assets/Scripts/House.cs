@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
+
+    [HideInInspector] public bool isUpdating=false;
     public float happinessIndex;
     
     public int houseMembers;
@@ -16,25 +18,33 @@ public class House : MonoBehaviour
     private float schoolValue;
     public float schoolDistanceScaling=0.1f; //scaling factor for school distance has to be changed to a more realistic one
 
+    public float waterValue;
+    [HideInInspector] public int membersWithoutWater;
+    public bool hasWater=false;
+
+    public float powerValue;
+    [HideInInspector] public int membersWithoutPower;
+    public bool hasPower=false;
+
 
     
-    float time=0;
     void Start(){
+        isUpdating=true;
         gameObject.tag="House";
-        houseMembers=2;
     }
     void Update()
     {
-        time += Time.deltaTime;
-        if(time > 5){
-            RealTimeUpdate();
-            time = 0;
+        if(isUpdating){
+            UpdateValues();
         }
     }
-    private void RealTimeUpdate()
-    {   //Own House
+    private void UpdateValues()
+    {
+        PreUpdateReset();        
+           //Own House
         houseValue.y = houseValue.x * God.houseWeightage;
-        happinessIndex = houseValue.y;
+        happinessIndex += houseValue.y;
+        //Debug.Log(happinessIndex);
 
 
 
@@ -44,16 +54,19 @@ public class House : MonoBehaviour
         foreach (Collider c in neighbourhood){
             if(c.gameObject.tag == "House"){
                 neighbourhoodValue.x += c.gameObject.GetComponent<House>().houseValue.x;
+                neighbourhoodCount++;
             }
         }
-        neighbourhoodValue.y = neighbourhoodValue.x / neighbourhoodCount * God.neighbourhoodWeightage;
+        if(neighbourhoodCount!=0)
+            neighbourhoodValue.y = neighbourhoodValue.x / neighbourhoodCount * God.neighbourhoodWeightage;
         happinessIndex += neighbourhoodValue.y;
+        //Debug.Log("neighbourhoodValue" + neighbourhoodValue.y);
 
 
 
 
         //Road
-        Collider[] road = Physics.OverlapSphere(transform.position, 1.5f*houseRadius);
+        Collider[] road = Physics.OverlapSphere(transform.position, houseRadius/(2*Mathf.Sqrt(2))+0.5f);
         foreach (Collider c in road){
             if(c.gameObject.tag == "Road"){
                 roadValue += c.gameObject.GetComponent<Road>().roadLevel * God.roadWeightage;
@@ -67,6 +80,7 @@ public class House : MonoBehaviour
             float distance = Vector3.Distance(transform.position, hospital.transform.position);
             hospitalValue += hospitalDistanceScaling / distance * God.hospitalWeightage;        //the scaling function has to be changed to a more realistic one
         }
+        //Debug.Log("hospitalValue" + hospitalValue);
         happinessIndex += hospitalValue;
 
         //School
@@ -75,5 +89,39 @@ public class House : MonoBehaviour
             float distance = Vector3.Distance(transform.position, school.transform.position);
             schoolValue += schoolDistanceScaling / distance * God.schoolWeightage;        //the scaling function has to be changed to a more realistic one
         }
+        //Debug.Log("schoolValue" + schoolValue);
+        happinessIndex += schoolValue;
+        //Debug.Log("happinessIndex: " + happinessIndex);
+
+        //water
+        if(!hasWater){
+            Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
+        }
+
+        //power
+        if(!hasPower){
+            Debug.Log("No Power at: "+gameObject.name + " with " + membersWithoutPower);
+        }
+
+        God.cumulativeHappinessIndex += happinessIndex;
+
+        
+
+        isUpdating=false;
+    }
+
+
+    private void PreUpdateReset(){
+        houseValue.y = 0;
+        neighbourhoodValue.x = 0;
+        neighbourhoodValue.y = 0;
+        roadValue = 0;
+        hospitalValue = 0;
+        schoolValue = 0;
+        happinessIndex = 0;
+        waterValue = 0;
+        membersWithoutWater = houseMembers;
+        powerValue = 0;
+        membersWithoutPower = houseMembers;
     }
 }
