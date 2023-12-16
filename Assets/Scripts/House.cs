@@ -22,6 +22,10 @@ public class House : MonoBehaviour
     [HideInInspector] public int membersWithoutWater;
     public bool hasWater=false;
 
+    public float powerValue;
+    [HideInInspector] public int membersWithoutPower;
+    public bool hasPower=false;
+
 
     
     void Start(){
@@ -91,9 +95,11 @@ public class House : MonoBehaviour
 
         //water
         if(!hasWater){
-            Debug.Log("Scarcity at: "+gameObject.name + " with " + houseMembers);
+            Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
         }
-        
+
+        God.cumulativeHappinessIndex += happinessIndex;
+
         
 
         isUpdating=false;

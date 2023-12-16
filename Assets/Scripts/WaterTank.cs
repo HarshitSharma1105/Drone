@@ -43,16 +43,9 @@ public class WaterTank : MonoBehaviour
                 housee.membersWithoutWater-=capacityLeft;
                 housee.waterValue+=capacityLeft*God.waterWeightage;
                 capacityLeft=0;
-                Debug.Log("Scarcity at: "+housee.name + " with " + housee.membersWithoutWater);
-                housee.hasWater=false;
-            }
-            /*while(housee.membersWithoutWater > 0 && capacityLeft > 0){
-                housee.membersWithoutWater--;
-                capacityLeft--;
-                housee.waterValue += God.waterWeightage;
+                Debug.Log("Water Scarcity at: "+housee.name + " with " + housee.membersWithoutWater);
                 housee.hasWater=true;
-            }*/
-
+            }
         }
         isUpdating=false;
 }

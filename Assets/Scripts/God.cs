@@ -24,7 +24,8 @@ public class God : MonoBehaviour
 
 
     public static float waterWeightage=0.1f;
-    public static float waterPenalty=0.1f;
+
+    public static float powerWeightage=0.1f;
     private float time=0;
     void Start()
     {
@@ -64,10 +65,11 @@ public class God : MonoBehaviour
             //Debug.Log("Updating WaterTank: "+waterTank.name);
         }
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         getUpdate=false;
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
+        yield return new WaitForSeconds(0.5f);
     }
 
     private void UpdateValues(){
