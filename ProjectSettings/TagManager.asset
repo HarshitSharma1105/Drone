@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - Commercial
+  - Educational
+  - Religious
+  - Houses
   layers:
   - Default
   - TransparentFX
