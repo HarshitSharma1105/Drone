@@ -15,6 +15,7 @@ TagManager:
   - School
   - WaterTank
   - ElectricalPower
+  - God
   layers:
   - Default
   - TransparentFX

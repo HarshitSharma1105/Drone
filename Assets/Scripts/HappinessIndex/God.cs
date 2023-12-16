@@ -33,7 +33,7 @@ public class God : MonoBehaviour
     {
         StartCoroutine(GetUpdates());
         getUpdate=false;
-        gameObject.tag="God";
+        //gameObject.tag="God";
         Debug.Log("God is here");
     }
 
@@ -133,7 +133,7 @@ public class God : MonoBehaviour
         foreach(Renderer renderer in renderers){
             bound.Encapsulate(renderer.bounds);
         }
-        bound.Encapsulate(obj.GetComponent<Renderer>().bounds);
+        //bound.Encapsulate(obj.GetComponent<Renderer>().bounds);
         return bound.center;
     }
 }
