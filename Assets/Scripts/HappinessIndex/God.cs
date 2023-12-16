@@ -99,13 +99,11 @@ public class God : MonoBehaviour
         foreach(GameObject hospital in hospitals){
             hospitalCapacity += hospital.GetComponent<Hospital>().capacity;
         }
-        Debug.Log("Hospital Capacity: "+hospitalCapacity);
         
         if(hospitalPatients > hospitalCapacity){
             Debug.Log("Hospital Capacity Exceeded");
             cumulativeHappinessIndex-=(hospitalPatients - hospitalCapacity) * hospitalPenalty;
         }
-        Debug.Log("Hospital Patients: "+hospitalPatients);
 
 
 
