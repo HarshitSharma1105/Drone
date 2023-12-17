@@ -1,0 +1,11 @@
+Model Information:
+* title:	Snowy Water tank
+* source:	https://sketchfab.com/3d-models/snowy-water-tank-b9cf4603062b4b93b10cb83e07ac596b
+* author:	Polygon Experts (https://sketchfab.com/polygonexperts)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Snowy Water tank" (https://sketchfab.com/3d-models/snowy-water-tank-b9cf4603062b4b93b10cb83e07ac596b) by Polygon Experts (https://sketchfab.com/polygonexperts) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
