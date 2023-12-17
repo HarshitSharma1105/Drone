@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lowpoly shops
+* source:	https://sketchfab.com/3d-models/lowpoly-shops-8a085c9f79384471a570b001f862e306
+* author:	RitiWox (https://sketchfab.com/RitiWox)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lowpoly shops" (https://sketchfab.com/3d-models/lowpoly-shops-8a085c9f79384471a570b001f862e306) by RitiWox (https://sketchfab.com/RitiWox) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

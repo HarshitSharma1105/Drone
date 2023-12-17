@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hospital Building
+* source:	https://sketchfab.com/3d-models/hospital-building-c4c9e17b8bbf4864a43998c8d02069d0
+* author:	zercz (https://sketchfab.com/zercz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hospital Building" (https://sketchfab.com/3d-models/hospital-building-c4c9e17b8bbf4864a43998c8d02069d0) by zercz (https://sketchfab.com/zercz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

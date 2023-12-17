@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mirco Cement Works
+* source:	https://sketchfab.com/3d-models/mirco-cement-works-d46fb0ee45bb4cf5837ffa320e0dc397
+* author:	novusod (https://sketchfab.com/novusod)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mirco Cement Works" (https://sketchfab.com/3d-models/mirco-cement-works-d46fb0ee45bb4cf5837ffa320e0dc397) by novusod (https://sketchfab.com/novusod) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
