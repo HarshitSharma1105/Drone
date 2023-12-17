@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sci-Fi BioFuel Station
+* source:	https://sketchfab.com/3d-models/sci-fi-biofuel-station-2f205999c9244d07bcd97d43d1f384db
+* author:	Martin Trafas (https://sketchfab.com/Bexxie)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sci-Fi BioFuel Station" (https://sketchfab.com/3d-models/sci-fi-biofuel-station-2f205999c9244d07bcd97d43d1f384db) by Martin Trafas (https://sketchfab.com/Bexxie) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
