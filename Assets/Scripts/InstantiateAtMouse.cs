@@ -7,6 +7,7 @@ public class InstantiateAtMouse : MonoBehaviour
     public float areaWidth = 2.0f; // Width of the square area
     public float areaLength = 2.0f;
     public GameObject panel;
+    public GameObject Road;
     public GameObject[] disallowedObjects; // Array of tags that prevent instantiation
 
     private void Awake()
@@ -27,7 +28,7 @@ public class InstantiateAtMouse : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
+                if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation) && CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
                 {
                     Tracker.instance.TrackInstantiatedObject(Instantiate(prefabToInstantiate, hit.point, spawnRotation));
                     // Instantiate the prefab at the hit point of the raycast (center of the screen in this case)
@@ -57,5 +58,20 @@ public class InstantiateAtMouse : MonoBehaviour
             }
         }
         return false; // No disallowed objects found within the area
+    }
+
+    bool CheckRoadWithinArea(Vector3 center, Quaternion rotation)
+    {
+        Vector3 halfExtents = new Vector3((areaWidth + 1) / 2f, 0.5f, (areaWidth + 1) / 2f); // Half extents for the square area
+        Collider[] colliders = Physics.OverlapBox(center, halfExtents, rotation); // Get colliders within the box area
+
+        foreach (var collider in colliders)
+        {
+            if (collider.CompareTag(Road.tag))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
