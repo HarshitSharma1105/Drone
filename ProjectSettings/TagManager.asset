@@ -16,6 +16,7 @@ TagManager:
   - WaterTank
   - ElectricalPower
   - God
+  - Road
   layers:
   - Default
   - TransparentFX

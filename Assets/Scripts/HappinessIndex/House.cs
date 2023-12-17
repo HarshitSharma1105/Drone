@@ -8,9 +8,9 @@ public class House : MonoBehaviour
     public float happinessIndex;
     
     public int houseMembers=4;
-    public float houseRadius=2f;
+    public float houseRadius=5f;
     public Vector2 houseValue=new Vector2(1,0);
-    [SerializeField] private float roadValue;
+    public float roadValue = 0;
     [SerializeField] private Vector2 neighbourhoodValue;
 
     [SerializeField] private float hospitalValue;
@@ -37,7 +37,8 @@ public class House : MonoBehaviour
         gameObject.tag="Houses";
     }
     void Update()
-    {
+    {   
+    //Debug.Log(isUpdating);
         if(isUpdating){
             UpdateValues();
         }
@@ -72,12 +73,18 @@ public class House : MonoBehaviour
 
 
         //Road
-        Collider[] road = Physics.OverlapSphere(God.GetCentre(gameObject), houseRadius/(2f*Mathf.Sqrt(2))+0.5f);
+        Collider[] road = Physics.OverlapSphere(God.GetCentre(gameObject), houseRadius);
+        int roadCount = 0;
         foreach (Collider c in road){
             if(c.gameObject.tag == "Road"){
-                roadValue += c.gameObject.GetComponent<Road>().roadLevel * God.roadWeightage;
+               // Debug.Log(c);
+               roadCount++;         
             }
+            roadValue += roadCount * God.roadWeightage;
+            Debug.Log("road value " + roadValue);
         }
+        if(roadCount!=0)
+       // Debug.Log("D " + roadCount);
         happinessIndex += roadValue;
 
         //Hospital
@@ -101,13 +108,13 @@ public class House : MonoBehaviour
 
         //water
         if(!hasWater){
-            Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
+            //Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
         }
         happinessIndex += waterValue;
 
         //power
         if(!hasPower){
-            Debug.Log("No Power at: "+gameObject.name + " with " + membersWithoutPower);
+            //Debug.Log("No Power at: "+gameObject.name + " with " + membersWithoutPower);
         }
         happinessIndex += powerValue;
 

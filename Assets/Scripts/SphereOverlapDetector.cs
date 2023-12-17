@@ -6,7 +6,11 @@ public class SphereOverlapDetector : MonoBehaviour
 
     public int houseCount = 0;
 
-    void CountHouse()
+    public void Start()
+    {
+        CountHouse();
+    }
+    public void CountHouse()
     {
         // Check for overlaps in the sphere
         Collider[] colliders = Physics.OverlapSphere(transform.position, sphereRadius);
@@ -15,14 +19,15 @@ public class SphereOverlapDetector : MonoBehaviour
 
         foreach (var collider in colliders)
         {
-            if (collider.CompareTag("Houses"))
+         //   Debug.Log("$$$$$$$$$$ " + collider.gameObject.name);
+            if (collider.gameObject.CompareTag("Houses"))
             {
                 houseCount++;
             }
         }
 
         // Print the result or use it as needed
-        //Debug.Log("Number of houses in the sphere: " + houseCount);
+     //   Debug.Log("Number of houses in the sphere: " + houseCount);
     }
 
     // You can also visualize the sphere in the scene view using OnDrawGizmos

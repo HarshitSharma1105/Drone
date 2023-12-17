@@ -43,24 +43,24 @@ public class RoadManager : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(isStart);
+          //  Debug.Log(isStart);
             if(isStart == 1)
             {
                 startPoint = GetMouseClickPosition();
-                Debug.Log(startPoint);
+              //  Debug.Log(startPoint);
                 isStart = 2;
             }
             else if(isStart == 2)
             {
                 endPoint = GetMouseClickPosition();
-                Debug.Log(endPoint);
+             //   Debug.Log(endPoint);
 
                 if (IsPathClear(startPoint, endPoint))
                 {   
                     arrowstart = Instantiate(arrow, startPoint, Quaternion.identity);
                     arrowend = Instantiate(arrow, endPoint, Quaternion.Euler(0, 180, 0));
                     CreateRoad(startPoint, endPoint);
-                    Debug.Log(isStart);
+                  //  Debug.Log(isStart);
                     isStart = 3;
                 }
                 else
@@ -139,7 +139,7 @@ public class RoadManager : MonoBehaviour
 
 
         isStart = 1;
-        Debug.Log(isStart);
+       // Debug.Log(isStart);
     }
 
     public int calculateCost(){
@@ -155,13 +155,13 @@ public class RoadManager : MonoBehaviour
         Create.SetActive(false);
         Cancel.SetActive(false);
 
-        Debug.Log(isStart);
+       // Debug.Log(isStart);
         isStart = 1;
     }
 
     void ShowErrorMessage()
     {
-        Debug.Log("Path is not clear. Cannot create road.");
+       // Debug.Log("Path is not clear. Cannot create road.");
     }
 }
 

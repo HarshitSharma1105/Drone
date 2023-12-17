@@ -12,7 +12,7 @@ public class God : MonoBehaviour
 
 
     public static float hospitalWeightage=0.1f;
-    public static float hospitalPenalty=0.1f;
+    public static float hospitalPenalty=0f;
     private int hospitalCapacity;
     private int hospitalPatients;
 
@@ -20,7 +20,7 @@ public class God : MonoBehaviour
     public static float schoolWeightage=0.1f;
     private int schoolCapacity;
     private int schoolStudents;
-    public static float schoolPenalty=0.1f;
+    public static float schoolPenalty=0f;
 
     public static float marketWeightage=0.1f;
 
@@ -34,7 +34,7 @@ public class God : MonoBehaviour
         StartCoroutine(GetUpdates());
         getUpdate=false;
         //gameObject.tag="God";
-        Debug.Log("God is here");
+       // Debug.Log("God is here");
     }
 
     
@@ -54,7 +54,7 @@ public class God : MonoBehaviour
 
     IEnumerator GetUpdates(){
         UpdateValues();
-        Debug.Log("Running Updates");
+      //  Debug.Log("Running Updates");
         GameObject[] houses = GameObject.FindGameObjectsWithTag("Houses");
         foreach(GameObject house in houses){
             if(house.GetComponent<House>()!=null)
@@ -102,7 +102,7 @@ public class God : MonoBehaviour
         }
         
         if(hospitalPatients > hospitalCapacity){
-            Debug.Log("Hospital Capacity Exceeded");
+           // Debug.Log("Hospital Capacity Exceeded");
             cumulativeHappinessIndex-=(hospitalPatients - hospitalCapacity) * hospitalPenalty;
         }
 
@@ -115,7 +115,7 @@ public class God : MonoBehaviour
             schoolCapacity += school.GetComponent<School>().schoolCapacity;
         }
         if(schoolStudents > schoolCapacity){
-            Debug.Log("School Capacity Exceeded");
+            //Debug.Log("School Capacity Exceeded");
             cumulativeHappinessIndex -= (schoolStudents - schoolCapacity) * schoolPenalty;
         }
 
@@ -123,7 +123,7 @@ public class God : MonoBehaviour
         //MarketCheck
         GameObject[] markets = GameObject.FindGameObjectsWithTag("Market");
         if(markets.Length == 0){
-            Debug.Log("No Market");
+           // Debug.Log("No Market");
         }
     }
 
