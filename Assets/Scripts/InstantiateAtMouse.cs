@@ -8,6 +8,7 @@ public class InstantiateAtMouse : MonoBehaviour
     public float areaLength = 2.0f;
     public GameObject panel;
     public GameObject Road;
+    public GameObject none;
     public GameObject[] disallowedObjects; // Array of tags that prevent instantiation
 
     private void Awake()
@@ -16,11 +17,12 @@ public class InstantiateAtMouse : MonoBehaviour
         {
             instance = this;
         }
+        prefabToInstantiate = none;
     }
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf) // Check for left mouse button click
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf && prefabToInstantiate!=none && prefabToInstantiate!= Road) // Check for left mouse button click
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray from the center of the screen
             Vector3 cameraAngles = Camera.main.transform.eulerAngles;
@@ -28,9 +30,10 @@ public class InstantiateAtMouse : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation) && CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
+                if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation) )//&& CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
                 {
                     Tracker.instance.TrackInstantiatedObject(Instantiate(prefabToInstantiate, hit.point, spawnRotation));
+                    prefabToInstantiate = none;
                     // Instantiate the prefab at the hit point of the raycast (center of the screen in this case)
                 }
                 else

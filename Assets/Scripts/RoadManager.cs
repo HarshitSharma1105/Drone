@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class RoadManager : MonoBehaviour
@@ -31,6 +32,7 @@ public class RoadManager : MonoBehaviour
 
     Vector3 startPoint = Vector3.zero;
     Vector3 endPoint = Vector3.zero;
+    public GameObject none;
 
     void Awake()
     {
@@ -40,8 +42,7 @@ public class RoadManager : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && InstantiateAtMouse.instance.prefabToInstantiate == roadPrefab)
         {
           //  Debug.Log(isStart);
             if(isStart == 1)
@@ -140,6 +141,8 @@ public class RoadManager : MonoBehaviour
 
         isStart = 1;
        // Debug.Log(isStart);
+        InstantiateAtMouse.instance.prefabToInstantiate = none ;
+        Debug.Log(isStart);
     }
 
     public int calculateCost(){
@@ -156,6 +159,8 @@ public class RoadManager : MonoBehaviour
         Cancel.SetActive(false);
 
        // Debug.Log(isStart);
+        InstantiateAtMouse.instance.prefabToInstantiate = none;
+        Debug.Log(isStart);
         isStart = 1;
     }
 

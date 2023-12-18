@@ -16,6 +16,7 @@ TagManager:
   - WaterTank
   - ElectricalPower
   - God
+  - none
   - Road
   layers:
   - Default
