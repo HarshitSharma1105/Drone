@@ -80,7 +80,7 @@ public class House : MonoBehaviour
                roadCount++;         
             }
             roadValue += roadCount * God.roadWeightage;
-            Debug.Log("road value " + roadValue);
+           // Debug.Log("road value " + roadValue);
         }
         if(roadCount!=0)
        // Debug.Log("D " + roadCount);

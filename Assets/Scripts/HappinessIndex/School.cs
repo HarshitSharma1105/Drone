@@ -6,7 +6,7 @@ public class School : MonoBehaviour
 
     void Start()
     {
-        God.getUpdate=true;
+        //God.getUpdate=true;
         gameObject.tag="School";
     }
 

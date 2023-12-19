@@ -35,7 +35,7 @@ public class OutlineSelection : MonoBehaviour
 
             if(!donotdestroy)
             {   curr = raycastHit.transform.gameObject;
-                Debug.Log("bsd : " + curr.name);
+               // Debug.Log("bsd : " + curr.name);
             if(curr != null ) 
             {
                 if(curr != prev )
