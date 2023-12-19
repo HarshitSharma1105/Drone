@@ -56,20 +56,4 @@ public class InstantiateAtMouse : MonoBehaviour
         }
         return false; // No disallowed objects found within the area
     }
-
-    bool CheckRoadWithinArea(Vector3 center, Quaternion rotation)
-    {
-        Vector3 halfExtents = new Vector3((areaWidth + 1) / 2f, 0.5f, (areaWidth + 1) / 2f); // Half extents for the square area
-        Collider[] colliders = Physics.OverlapBox(center, halfExtents, rotation); // Get colliders within the box area
-
-        foreach (var collider in colliders)
-        {
-            if (collider.CompareTag(Road.tag))
-            {
-                return true;
-                
-            }
-        }
-        return false;
-    }
 }
