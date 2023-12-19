@@ -7,7 +7,6 @@ public class InstantiateAtMouse : MonoBehaviour
     public float areaWidth = 2.0f; // Width of the square area
     public float areaLength = 2.0f;
     public GameObject panel;
-    public GameObject Road;
     public bool isSelected;
     public GameObject[] disallowedObjects; // Array of tags that prevent instantiation
 
@@ -22,7 +21,7 @@ public class InstantiateAtMouse : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf && isSelected && prefabToInstantiate!= Road) // Check for left mouse button click
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf && isSelected && prefabToInstantiate.tag!= "Road") // Check for left mouse button click
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray from the center of the screen
             Vector3 cameraAngles = Camera.main.transform.eulerAngles;

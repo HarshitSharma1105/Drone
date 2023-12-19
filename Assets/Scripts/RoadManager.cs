@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class RoadManager : MonoBehaviour
 {
-    public GameObject roadPrefab;
-
     public GameObject arrow;
 
     GameObject arrowstart;
@@ -42,7 +40,7 @@ public class RoadManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && InstantiateAtMouse.instance.prefabToInstantiate == roadPrefab)
+        if (Input.GetMouseButtonDown(0) && InstantiateAtMouse.instance.prefabToInstantiate.tag == "Road")
         {
           //  Debug.Log(isStart);
             if(isStart == 1)
@@ -113,7 +111,7 @@ public class RoadManager : MonoBehaviour
         
         
         
-        road = Instantiate(roadPrefab, startPoint, Quaternion.LookRotation(direction));
+        road = Instantiate(InstantiateAtMouse.instance.prefabToInstantiate, startPoint, Quaternion.LookRotation(direction));
 
         // Adjust the scale of the road to fit the distance
         road.transform.localScale = new Vector3(1f, 1f, distance);
