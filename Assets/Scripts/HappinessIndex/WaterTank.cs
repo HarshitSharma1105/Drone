@@ -20,13 +20,12 @@ public class WaterTank : MonoBehaviour
     }
 
     private void UpdateValues(){
-        capacityLeft=capacity;
-        GameObject[] houses=GameObject.FindGameObjectsWithTag("Houses");
+        GameObject[] houses=God.houses;
         foreach(GameObject house in houses){
             if(house.GetComponent<House>()!=null)
             house.GetComponent<House>().hasWater=false;
         }
-        Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), waterRadius);
+        Collider[] housesInRange=Physics.OverlapSphere(gameObject.transform.position, waterRadius);
 
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")
@@ -34,20 +33,21 @@ public class WaterTank : MonoBehaviour
             if(house.gameObject.GetComponent<House>()==null)
                 continue;
             House housee=house.gameObject.GetComponent<House>();
-            housee.waterValue=0;
-            if(housee.membersWithoutWater<=capacity){
-                capacityLeft-=housee.membersWithoutWater;
-                housee.waterValue+=housee.membersWithoutWater*God.waterWeightage;
-                housee.membersWithoutWater=0;
-                housee.hasWater=true;
-            }
-            else{
-                housee.membersWithoutWater-=capacityLeft;
-                housee.waterValue+=capacityLeft*God.waterWeightage;
-                capacityLeft=0;
-                //Debug.Log("Water Scarcity at: "+housee.name + " with " + housee.membersWithoutWater);
-                housee.hasWater=true;
-            }
+            housee.hasWater=true;
+            // housee.waterValue=0;
+            // if(housee.membersWithoutWater<=capacity){
+            //     capacityLeft-=housee.membersWithoutWater;
+            //     housee.waterValue+=housee.membersWithoutWater*God.waterWeightage;
+            //     housee.membersWithoutWater=0;
+            //     housee.hasWater=true;
+            // }
+            // else{
+            //     housee.membersWithoutWater-=capacityLeft;
+            //     housee.waterValue+=capacityLeft*God.waterWeightage;
+            //     capacityLeft=0;
+            //     //Debug.Log("Water Scarcity at: "+housee.name + " with " + housee.membersWithoutWater);
+            //     housee.hasWater=true;
+            // }
         }
         isUpdating=false;
     }

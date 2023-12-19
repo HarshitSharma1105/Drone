@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-
+    public long budget;
     [HideInInspector] public bool isUpdating=false;
     public float happinessIndex;
     
@@ -20,11 +20,9 @@ public class House : MonoBehaviour
     public float schoolDistanceScaling=0.1f; //scaling factor for school distance has to be changed to a more realistic one
 
     public float waterValue;
-    [HideInInspector] public int membersWithoutWater;
     public bool hasWater=false;
 
     public float powerValue;
-    [HideInInspector] public int membersWithoutPower;
     public bool hasPower=false;
 
     [SerializeField] private float marketValue;
@@ -33,6 +31,7 @@ public class House : MonoBehaviour
 
     
     void Start(){
+        God.getUpdate=true;
         isUpdating=true;
         gameObject.tag="Houses";
     }
@@ -107,14 +106,20 @@ public class House : MonoBehaviour
         //Debug.Log("happinessIndex: " + happinessIndex);
 
         //water
-        if(!hasWater){
-            //Debug.Log("Water Scarcity at: "+gameObject.name + " with " + membersWithoutWater);
+        if(hasWater){
+            waterValue=God.waterWeightage;
+        }
+        else{
+            Debug.Log("No Water at: "+gameObject.GetComponentInParent<House>().name);
         }
         happinessIndex += waterValue;
 
         //power
-        if(!hasPower){
-            //Debug.Log("No Power at: "+gameObject.name + " with " + membersWithoutPower);
+        if(hasPower){
+            powerValue=God.powerWeightage;
+        }
+        else{
+            Debug.Log("No Power at: "+gameObject.GetComponentInParent<House>().name);
         }
         happinessIndex += powerValue;
 
@@ -146,7 +151,9 @@ public class House : MonoBehaviour
         schoolValue = 0;
         happinessIndex = 0;
         marketValue = 0;
-        membersWithoutWater = houseMembers;
-        membersWithoutPower = houseMembers;
+    }
+
+    public void getBudget(){
+
     }
 }
