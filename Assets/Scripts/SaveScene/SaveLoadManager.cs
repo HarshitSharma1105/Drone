@@ -74,7 +74,7 @@ public class SaveLoadManager : MonoBehaviour
     private string GetPrefabPathForObject(GameObject obj)
     {
         string originalName = obj.name.Replace("(Clone)", "");
-        return "Prefabs/" + originalName;
+        return "Prefabs/Instantiating Objects/" + originalName;
     }
 
     private void OnApplicationQuit()

@@ -141,7 +141,7 @@ public class RoadManager : MonoBehaviour
 
         isStart = 1;
        // Debug.Log(isStart);
-        InstantiateAtMouse.instance.prefabToInstantiate = none ;
+        InstantiateAtMouse.instance.isSelected = false ;
         Debug.Log(isStart);
     }
 
@@ -159,7 +159,7 @@ public class RoadManager : MonoBehaviour
         Cancel.SetActive(false);
 
        // Debug.Log(isStart);
-        InstantiateAtMouse.instance.prefabToInstantiate = none;
+        InstantiateAtMouse.instance.isSelected = false;
         Debug.Log(isStart);
         isStart = 1;
     }

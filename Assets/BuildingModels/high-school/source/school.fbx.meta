@@ -3,7 +3,137 @@ guid: f2823d1986eeaa64ca2ec9db13d9bbbb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHAircon
+    second: {fileID: 2100000, guid: 2ece402e316cd204ab0fbe83d72b7ea2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHBack1
+    second: {fileID: 2100000, guid: 646b9247680c1e7469756889c4cab759, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHBack2
+    second: {fileID: 2100000, guid: 443b26581417f824c96193170f9f8f84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHBase1
+    second: {fileID: 2100000, guid: 2f6b4a173c2458f48a135c1b7836f645, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHBase2
+    second: {fileID: 2100000, guid: eb176bd75c86ddc4a89446684215e18f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHDoors
+    second: {fileID: 2100000, guid: a48c035e1365a704ca43523223d146f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHFloor1
+    second: {fileID: 2100000, guid: 4a366b58b8362e546bb193ef7465f3e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHFloor2
+    second: {fileID: 2100000, guid: a73de146e032a2b47a84f826a2a02213, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHFloor3
+    second: {fileID: 2100000, guid: 6f426bde9622d034fb7c88c171e3f84c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHFront1
+    second: {fileID: 2100000, guid: 3c5cd2ff2ac80984aabdaeace5e478a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHFront2
+    second: {fileID: 2100000, guid: 2847fef1f0c05db4ea609933d1ebb7b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHGlass1
+    second: {fileID: 2100000, guid: 0fbccdb2050a8e74b99a31d5ec775c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHGlass2
+    second: {fileID: 2100000, guid: 32a653b009f6d4b409cad6a215153851, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHGlass3
+    second: {fileID: 2100000, guid: ed3141110d116294d92c92c505c7535f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHInterior1
+    second: {fileID: 2100000, guid: 00768310bfe24bf4faa1dba212a1c93c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHInterior2
+    second: {fileID: 2100000, guid: 598ff78aa5298434791402a37caf43ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHInterior3
+    second: {fileID: 2100000, guid: f0dcf40d2d0b16544b7499b1dd0cda40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHRoof
+    second: {fileID: 2100000, guid: 49bedfdb860b2d3489a88708db7569cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHRoofDoor
+    second: {fileID: 2100000, guid: 857d9469689fba0409e87fba1af1d0b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHSide1
+    second: {fileID: 2100000, guid: 5e15ad83e3b728a4e8caf8678f7fd8b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHSide2
+    second: {fileID: 2100000, guid: e470233053863ca45a619f229d03a508, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHVent
+    second: {fileID: 2100000, guid: f59014c9b0c46d7448975d3bd5363816, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHWinMetal1
+    second: {fileID: 2100000, guid: cd3e658ca415fbb43b7904dfb1f741af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHWinMetal2
+    second: {fileID: 2100000, guid: 259f3bdff55114f4ba9c0bc644ac58e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHWinMetal3
+    second: {fileID: 2100000, guid: 973f780549698114ebd7252b692150f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCHWinMetal4
+    second: {fileID: 2100000, guid: 68303aefa93aac5419044e4a7457c8ff, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
