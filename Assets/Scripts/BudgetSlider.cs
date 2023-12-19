@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +17,6 @@ public class BudgetSlider : MonoBehaviour
         text.text =(budget).ToString("G8");
         text.text="Rs. "+text.text;
         God.budget=budget;
-        Debug.Log("Budget: "+God.budget);
+        //Debug.Log("Budget: "+God.budget);
     }
 }
