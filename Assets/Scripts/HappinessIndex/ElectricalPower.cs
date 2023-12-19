@@ -20,13 +20,12 @@ public class ElectricalPower : MonoBehaviour
         }
     }
     private void UpdateValues(){
-        capacityLeft=capacity;
-        GameObject[] houses=GameObject.FindGameObjectsWithTag("Houses");
+        GameObject[] houses=God.houses;
         foreach(GameObject house in houses){
             if(house.GetComponent<House>()!=null)
             house.GetComponent<House>().hasPower=false;
         }
-        Collider[] housesInRange=Physics.OverlapSphere(God.GetCentre(gameObject), powerRadius);
+        Collider[] housesInRange=Physics.OverlapSphere(gameObject.transform.position, powerRadius);
 
         foreach(Collider house in housesInRange){
             if(house.gameObject.tag != "Houses")
@@ -35,20 +34,21 @@ public class ElectricalPower : MonoBehaviour
             continue;
 
             House housee=house.gameObject.GetComponent<House>();
-            housee.powerValue=0;
-            if(housee.membersWithoutPower<=capacity){
-                capacityLeft-=housee.membersWithoutPower;
-                housee.powerValue+=housee.membersWithoutPower*God.powerWeightage;
-                housee.membersWithoutPower=0;
-                housee.hasPower=true;
-            }
-            else{
-                housee.membersWithoutPower-=capacityLeft;
-                housee.powerValue+=capacityLeft*God.powerWeightage;
-                capacityLeft=0;
-                Debug.Log("No Power at: "+housee.name + " with " + housee.membersWithoutPower);
-                housee.hasPower=true;
-            }
+            housee.hasPower=true;
+            // housee.powerValue=0;
+            // if(housee.membersWithoutPower<=capacity){
+            //     capacityLeft-=housee.membersWithoutPower;
+            //     housee.powerValue+=housee.membersWithoutPower*God.powerWeightage;
+            //     housee.membersWithoutPower=0;
+            //     housee.hasPower=true;
+            // }
+            // else{
+            //     housee.membersWithoutPower-=capacityLeft;
+            //     housee.powerValue+=capacityLeft*God.powerWeightage;
+            //     capacityLeft=0;
+            //     Debug.Log("No Power at: "+housee.name + " with " + housee.membersWithoutPower);
+            //     housee.hasPower=true;
+            // }
         }
         isUpdating=false;
     }
