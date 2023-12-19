@@ -7,6 +7,7 @@ public class InstantiateAtMouse : MonoBehaviour
     public GameObject prefabToInstantiate;
     public float areaWidth = 2.0f; // Width of the square area
     public float areaLength = 2.0f;
+    public float height = 1;
     public GameObject panel;
     public bool isSelected;
     public GameObject[] disallowedObjects;
@@ -29,22 +30,23 @@ public class InstantiateAtMouse : MonoBehaviour
         Hover.transform.rotation = spawnRotation;
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Hover.transform.position = hit.point;
-        }
+            Vector3 position = new Vector3 (hit.point.x, height, hit.point.z);
+            Hover.transform.position = position;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf && isSelected && prefabToInstantiate.tag!= "Road") // Check for left mouse button click
-        {
-            foreach (Transform child in Hover.transform)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf && isSelected && prefabToInstantiate.tag != "Road") // Check for left mouse button click
             {
-                Destroy(child.gameObject);
-            }
+                foreach (Transform child in Hover.transform)
+                {
+                    Destroy(child.gameObject);
+                }
 
-            if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation) )//&& CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
-            {
+                if (!CheckdisallowedObjectsWithinArea(hit.point, spawnRotation))//&& CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
+                {
                     isSelected = false;
-                    Tracker.instance.TrackInstantiatedObject(Instantiate(prefabToInstantiate, hit.point, spawnRotation));
+                    Tracker.instance.TrackInstantiatedObject(Instantiate(prefabToInstantiate, position, spawnRotation));
                     Camera.main.GetComponent<OutlineSelection>().enabled = true;
                     // Instantiate the prefab at the hit point of the raycast (center of the screen in this case)
+                }
             }
         }
     }
