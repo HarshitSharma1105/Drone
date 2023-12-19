@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class God : MonoBehaviour
 {
+    public static long budget=100000000;
     public static bool getUpdate=false;
     public static float cumulativeHappinessIndex=0;
     public static float houseWeightage=0.3f;
@@ -128,12 +129,11 @@ public class God : MonoBehaviour
     }
 
     public static Vector3 GetCentre(GameObject obj){
-        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
-        Bounds bound=renderers[0].bounds;
-        foreach(Renderer renderer in renderers){
-            bound.Encapsulate(renderer.bounds);
+        Collider[] colliders = obj.GetComponentsInChildren<Collider>();
+        Bounds bound=colliders[0].bounds;
+        foreach(Collider collider in colliders){
+            bound.Encapsulate(collider.bounds);
         }
-        //bound.Encapsulate(obj.GetComponent<Renderer>().bounds);
         return bound.center;
     }
 }

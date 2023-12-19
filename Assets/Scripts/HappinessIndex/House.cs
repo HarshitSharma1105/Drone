@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-
+    public long budget;
     [HideInInspector] public bool isUpdating=false;
     public float happinessIndex;
     
@@ -148,5 +148,9 @@ public class House : MonoBehaviour
         marketValue = 0;
         membersWithoutWater = houseMembers;
         membersWithoutPower = houseMembers;
+    }
+
+    public void getBudget(){
+        
     }
 }
