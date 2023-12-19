@@ -9,6 +9,7 @@ public class God : MonoBehaviour
     public static float houseWeightage=0.3f;
     public static float roadWeightage=0.1f;
     public static float neighbourhoodWeightage=0.1f;
+    Bounds bounds;
     
 
 
@@ -49,7 +50,7 @@ public class God : MonoBehaviour
             getUpdate = false;
         }
         time += Time.deltaTime;
-        if(time > 5){
+        if(time > 60){
             StartCoroutine(GetUpdates());
             time = 0;
         }
@@ -79,7 +80,7 @@ public class God : MonoBehaviour
         getUpdate=false;
         yield return new WaitForSeconds(0.3f);
         cumulativeHappinessIndex=cumulativeHappinessIndex/houses.Length;
-        Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex);
+        Debug.Log("Cumulative Happiness Index: "+cumulativeHappinessIndex*100);
         yield return new WaitForSeconds(0.3f);
     }
 
@@ -133,15 +134,16 @@ public class God : MonoBehaviour
     }
 
     public static Vector3 GetCentre(GameObject obj){
-        if(obj.GetComponent<MeshRenderer>()!=null){
+        if(obj.GetComponent<Collider>()!=null){
             return obj.GetComponent<Collider>().bounds.center;
         }
         else
         {
-        Collider[] colliders = obj.GetComponentsInChildren<Collider>();
-        Bounds bound=colliders[0].bounds;
-        foreach(Collider collider in colliders){
-            bound.Encapsulate(collider.bounds);
+        Transform[] colliders = obj.GetComponentsInChildren<Transform>();
+        Bounds bound = colliders[0].gameObject.GetComponent<Collider>().bounds;
+
+        foreach(Transform collider in colliders){
+            bound.Encapsulate(collider.gameObject.GetComponent<Collider>().bounds);
         }
         return bound.center;
         }

@@ -104,6 +104,7 @@ public class House : MonoBehaviour
         //Debug.Log("schoolValue" + schoolValue);
         happinessIndex += schoolValue;
         //Debug.Log("happinessIndex: " + happinessIndex);
+        
 
         //water
         if(hasWater){
