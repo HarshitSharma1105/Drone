@@ -3,12 +3,15 @@ using UnityEngine;
 public class InstantiateAtMouse : MonoBehaviour
 {
     public static InstantiateAtMouse instance;
+    public GameObject Hover;
     public GameObject prefabToInstantiate;
     public float areaWidth = 2.0f; // Width of the square area
     public float areaLength = 2.0f;
     public GameObject panel;
     public bool isSelected;
-    public GameObject[] disallowedObjects; // Array of tags that prevent instantiation
+    public GameObject[] disallowedObjects;
+    // Array of tags that prevent instantiation
+    
 
     private void Awake()
     {
@@ -20,21 +23,28 @@ public class InstantiateAtMouse : MonoBehaviour
     }
     void Update()
     {
-        
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray from the center of the screen
+        Vector3 cameraAngles = Camera.main.transform.eulerAngles;
+        Quaternion spawnRotation = Quaternion.Euler(0f, cameraAngles.y, cameraAngles.z); // Same Y and Z angles as the camera
+        Hover.transform.rotation = spawnRotation;
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Hover.transform.position = hit.point;
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && !panel.activeSelf && isSelected && prefabToInstantiate.tag!= "Road") // Check for left mouse button click
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray from the center of the screen
-            Vector3 cameraAngles = Camera.main.transform.eulerAngles;
-            Quaternion spawnRotation = Quaternion.Euler(0f, cameraAngles.y, cameraAngles.z); // Same Y and Z angles as the camera
-
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            foreach (Transform child in Hover.transform)
             {
-                if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation) )//&& CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
-                {
+                Destroy(child.gameObject);
+            }
+
+            if (!CheckdisallowedObjectsWithinArea(hit.point,spawnRotation) )//&& CheckRoadWithinArea(hit.point,spawnRotation)) // Check for disallowed objects within the area
+            {
                     isSelected = false;
                     Tracker.instance.TrackInstantiatedObject(Instantiate(prefabToInstantiate, hit.point, spawnRotation));
+                    Camera.main.GetComponent<OutlineSelection>().enabled = true;
                     // Instantiate the prefab at the hit point of the raycast (center of the screen in this case)
-                }
             }
         }
     }

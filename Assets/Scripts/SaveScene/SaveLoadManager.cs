@@ -80,7 +80,5 @@ public class SaveLoadManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveTrackedObjectsData();
-        PlayerPrefs.SetInt("FirstTime", 1);
-        PlayerPrefs.Save();
     }
 }

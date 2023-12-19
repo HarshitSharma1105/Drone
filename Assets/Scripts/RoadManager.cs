@@ -30,7 +30,7 @@ public class RoadManager : MonoBehaviour
 
     Vector3 startPoint = Vector3.zero;
     Vector3 endPoint = Vector3.zero;
-    public GameObject none;
+    
 
     void Awake()
     {
@@ -40,7 +40,7 @@ public class RoadManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && InstantiateAtMouse.instance.prefabToInstantiate.tag == "Road")
+        if (Input.GetMouseButtonDown(0) && InstantiateAtMouse.instance.prefabToInstantiate.tag == "Road" && InstantiateAtMouse.instance.isSelected)
         {
           //  Debug.Log(isStart);
             if(isStart == 1)
@@ -118,7 +118,7 @@ public class RoadManager : MonoBehaviour
 
         // Adjust the position of the road to the midpoint between start and end points
         road.transform.position = startPoint + 0.5f * direction;
-
+        Tracker.instance.TrackInstantiatedObject(road);
         Create.SetActive(true);
         Cancel.SetActive(true);
     }
@@ -128,6 +128,8 @@ public class RoadManager : MonoBehaviour
         Destroy(arrowend);
         Create.SetActive(false);
         Cancel.SetActive(false);
+        Camera.main.GetComponent<OutlineSelection>().enabled = true;
+        InstantiateAtMouse.instance.isSelected = false ;
 
         //cost logic always to be used
         int cost = calculateCost();
@@ -139,7 +141,6 @@ public class RoadManager : MonoBehaviour
 
         isStart = 1;
        // Debug.Log(isStart);
-        InstantiateAtMouse.instance.isSelected = false ;
         Debug.Log(isStart);
     }
 
@@ -154,9 +155,10 @@ public class RoadManager : MonoBehaviour
         Destroy(arrowend);
         Destroy(road);
         Create.SetActive(false);
-        Cancel.SetActive(false);
+        Cancel.SetActive(false); 
+        Camera.main.GetComponent<OutlineSelection>().enabled = true;
 
-       // Debug.Log(isStart);
+        // Debug.Log(isStart);
         InstantiateAtMouse.instance.isSelected = false;
         Debug.Log(isStart);
         isStart = 1;
